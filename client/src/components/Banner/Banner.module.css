@@ -1,0 +1,79 @@
+.background {
+    background-image: url("assets/background.svg");
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 100px;
+    text-transform: uppercase;
+}
+.logo {
+    text-decoration: none;
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: 900;
+}
+.list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.list li {
+    margin:0 50px 0 0;
+}
+.list li a img {
+    height: 25px;
+}
+
+.container {
+    box-sizing: border-box;
+    margin: 100px 900px 80px 160px;
+}
+.banner {
+    font-size: 100px;
+}
+.shopBtn {
+    padding: 20px 120px;
+    border: 1px solid #ffffff;
+    font-size: 25px;
+    color: #ffffff;
+    background: transparent;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Design Section */
+.design {
+    margin: 100px 900px 220px 160px;
+}
+.tryBtn {
+    padding: 20px 120px;
+    border: 2px solid #000000;
+    font-size: 25px;
+    color: #000000;
+    background: transparent;
+    cursor: pointer;
+}
+.man {
+    position: absolute;
+    top: 100%;
+    left: 40%;
+}
+.man img {
+    object-fit: contain;
+    width: 900px;
+    height: 800px;
+}
+
+/* Clients Section */
+.clients {
+    margin: 100px 900px 220px 160px;
+}
+
+

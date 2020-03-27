@@ -1,0 +1,23 @@
+.footer {
+    padding: 60px 0;
+}
+.container {
+    width: 100%;
+    max-width: 1920px;
+    margin-left: 200px;
+}
+.footer__nav {
+    display: flex;
+}
+.footer__nav > a {
+    margin-right: 120px;
+    text-decoration: none;
+    color: #000000;
+}
+.footer__nav > a:last-child {
+    margin-right: 0;
+}
+.footer__copyright {
+    font-weight: normal;
+    margin: 40px 0;
+}
