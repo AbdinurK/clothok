@@ -30,20 +30,17 @@ app.use((req, res, next) => {
 });
 app.use('/products', productRoutes);
 app.use('/orders', orderRoutes);
-
-
+app.use('/uploads', express.static('uploads'));
 app.use((req, res, next) => {
     const error = new Error('Not found!');
     error.status = 404;
     next(error);
 });
-app.use((error, req, res, next) => {
-    res.status(error.status || 5000);
-    res.json({
-        error: {
-            message: error.message
-        }
-    });
+
+app.use(function (err, req, res, next) {
+    console.error(err.message);
+    if (!err.statusCode) err.statusCode = 500;
+    res.status(err.statusCode).send(err.message);
 });
 
 
