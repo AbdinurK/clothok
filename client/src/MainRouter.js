@@ -12,9 +12,9 @@ class MainRouter extends Component {
             <div>
                 <Switch>
                     <Route exact path="/" component={Banner}/>
-                    <Route path="/products" component={ProductsList}/>
+                    <Route path="/products" exact component={ProductsList}/>
                     <Route path="/designLab" component={DesignLab}/>
-                    <Route path="/products/:_id" component={ProductDetail}/>
+                    <Route path="/products/:id" exact component={ProductDetail}/>
                 </Switch>
             </div>
         )

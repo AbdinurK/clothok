@@ -17,7 +17,6 @@ class ProductsList extends Component {
 
     render() {
         const { products } = this.props.product;
-        console.log(products);
         return (
             <div>
                 <Navbar/>
@@ -25,14 +24,16 @@ class ProductsList extends Component {
                 <main className={styles.main}>
                     <section className={styles.cards}>
                         { products.map(product => (
-                            <Link to={`/products/${product._id}`}>
+
                                 <div key={ product._id} className={styles.card}>
                                     <div className={styles.card__image}>
                                         <img src={'../../../../' + product.image} alt="sorry"/>
                                     </div>
                                     <div className={styles.card__info}>
                                         <div className={styles.card__content}>
-                                            <p className={styles.card__title}>{ product.title }</p>
+                                            <Link to={`/products/${product._id}`}>
+                                                <p className={styles.card__title}>{ product.title }</p>
+                                            </Link>
                                             {/*<p className={styles.card__description}>{ product.description }</p>*/}
                                             <p className="card__price">{ product.price } T</p>
                                         </div>
@@ -41,7 +42,6 @@ class ProductsList extends Component {
                                         </div>
                                     </div>
                                 </div>
-                            </Link>
                         )) }
                     </section>
                 </main>
