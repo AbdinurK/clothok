@@ -5,9 +5,9 @@ import PropTypes  from "prop-types";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import styles from "./ProductsList.module.css"
-import basket from "./basket.svg";
-import Filter from "../../components/Filter/Filter";
+import basket from "./assets/basket.svg";
 import { Link } from "react-router-dom";
+import Spinner from "../../components/Spinner/Spinner"
 
 class ProductsList extends Component {
 
@@ -16,14 +16,16 @@ class ProductsList extends Component {
     }
 
     render() {
-        const { products } = this.props.product;
-        return (
-            <div>
-                <Navbar/>
-                <Filter/>
-                <main className={styles.main}>
-                    <section className={styles.cards}>
-                        { products.map(product => (
+        const { products, loading } = this.props.product;
+        let productsContent;
+        if (products === undefined || products === null || loading || Object.keys(products).length === 0) {
+            productsContent = <Spinner/>;
+        } else {
+            productsContent = (
+                <div>
+                    <main className={styles.main}>
+                        <section className={styles.cards}>
+                            { products.map(product => (
 
                                 <div key={ product._id} className={styles.card}>
                                     <div className={styles.card__image}>
@@ -37,15 +39,20 @@ class ProductsList extends Component {
                                             {/*<p className={styles.card__description}>{ product.description }</p>*/}
                                             <p className="card__price">{ product.price } T</p>
                                         </div>
-                                        <div className={styles.card__basket}>
-                                            <img src={basket} alt="no"/>
-                                        </div>
+                                        <img src={basket} alt="no" className={styles.basket}/>
                                     </div>
                                 </div>
-                        )) }
-                    </section>
-                </main>
-                <Footer/>
+                            )) }
+                        </section>
+                    </main>
+                    <Footer/>
+                </div>
+            )
+        }
+        return (
+            <div>
+                <Navbar/>
+                { productsContent }
             </div>
         )
     }

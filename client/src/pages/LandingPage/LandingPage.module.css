@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
 .background {
     background-image: url("assets/background.svg");
     height: 100vh;
+    width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
     color: white;
+}
+.background > .container {
+    padding-top: 100px;
 }
 .navbar {
     display: flex;
@@ -16,7 +20,7 @@
     text-decoration: none;
     font-size: 30px;
     color: #ffffff;
-    font-weight: 900;
+    font-weight: bold;
 }
 .list {
     list-style: none;
@@ -33,10 +37,12 @@
 
 .container {
     box-sizing: border-box;
-    margin: 100px 900px 80px 160px;
+    margin: 0 900px 80px 160px;
 }
 .banner {
-    font-size: 100px;
+    font-size: 90px;
+    font-weight: 600;
+    margin: 0 0 70px;
 }
 .shopBtn {
     padding: 20px 120px;
@@ -50,7 +56,10 @@
 
 /* Design Section */
 .design {
-    margin: 100px 900px 220px 160px;
+    height: 100vh;
+}
+.design > .container {
+    padding-top: 100px;
 }
 .tryBtn {
     padding: 20px 120px;
@@ -59,6 +68,7 @@
     color: #000000;
     background: transparent;
     cursor: pointer;
+    text-decoration: none;
 }
 .man {
     position: absolute;
@@ -67,13 +77,35 @@
 }
 .man img {
     object-fit: contain;
-    width: 900px;
-    height: 800px;
+    width: 880px;
+    height: 820px;
 }
 
 /* Clients Section */
 .clients {
-    margin: 100px 900px 220px 160px;
+    background: black;
+    color: white;
+    height: 100vh;
+}
+.clients > .container {
+    padding-top: 200px;
 }
 
+.about {
+    height: 100vh;
+    background: white;
+    color: black;
+}
+.about > .space {
+    padding-top: 150px;
+}
+.space {
+    margin: 0 180px 80px 160px;
+    display: flex;
+}
+.text {
+    margin-left: 170px;
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+}
 
