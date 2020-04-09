@@ -1,0 +1,47 @@
+.designNav {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1040px;
+    margin: 0 auto;
+    align-items: center;
+    padding: 20px 0;
+}
+.title {
+    margin: 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+}
+.action__button > img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    margin-left: 70px;
+}
+.action__button > img:last-child {
+    margin: 0;
+}
+.action__button {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+}
+.action__button > a:first-child,
+.action__button > a:last-child {
+    margin-right: 25px;
+    border: 2px solid #202020;
+    border-radius: 3px;
+    text-decoration: none;
+    max-width: 350px;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase;
+}
+.action__button > a:last-child {
+    background: black;
+    color: white;
+    margin-right: 0;
+}

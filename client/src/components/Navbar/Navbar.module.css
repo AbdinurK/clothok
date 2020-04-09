@@ -4,6 +4,7 @@
     padding: 20px 50px;
     text-transform: uppercase;
     align-items: center;
+    border-bottom: 1px solid #000000;
 }
 .logo {
     line-height: revert;

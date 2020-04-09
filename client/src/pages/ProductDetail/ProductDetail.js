@@ -5,11 +5,33 @@ import Navbar from "../../components/Navbar/Navbar";
 import { getProduct } from "../../actions/productAction";
 import Spinner from "../../components/Spinner/Spinner"
 import styles from "./ProductDetail.module.css"
+import { NavLink } from "react-router-dom";
 
-class ProductDetail extends Component{
+class ProductDetail extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            count: 1
+        };
+        this.plus = this.plus.bind(this);
+        this.minus = this.minus.bind(this);
+    }
 
     componentDidMount() {
         this.props.getProduct(this.props.match.params.id)
+    }
+
+    plus() {
+        this.setState(state => ({
+            count: state.count + 1
+        }))
+    }
+
+    minus() {
+        this.setState(state => ({
+            count: state.count - 1
+        }))
     }
 
     render() {
@@ -30,22 +52,24 @@ class ProductDetail extends Component{
                             <p className={styles.size__text}>Choose size:</p>
                             <ul className={styles.box}>
                                 <li className={styles.box__item}>XS</li>
-                                <li className="box__item">S</li>
-                                <li className="box__item">M</li>
-                                <li className="box__item">L</li>
-                                <li className="box__item">XL</li>
+                                <li className={styles.box__item}>S</li>
+                                <li className={styles.box__item}>M</li>
+                                <li className={styles.box__item}>L</li>
+                                <li className={styles.box__item}>XL</li>
                             </ul>
-                            <div className="product__quantity">
-                                Quantity:
-                                <div>
-                                    { product.orderCount }
+                            <div className={styles.product__quantity}>
+                                <p>Quantity:</p>
+                                <div className={styles.buttons}>
+                                    <button onClick={this.plus}>+</button>
+                                    <div className={styles.count}>{ this.state.count }</div>
+                                    <button onClick={this.minus}>-</button>
                                 </div>
                             </div>
-                            <span>Delivery week</span>
-                            <span className="product__delivery">{ product.delivery } week</span>
+                            <span>Delivery week: </span>
+                            <span className={styles.product__delivery}>{ product.delivery } week</span>
                             <div className={styles.action__button}>
-                                <button>Edit design</button>
-                                <button>Order</button>
+                                <NavLink to="/designLab">Edit design</NavLink>
+                                <NavLink to="/order">Order</NavLink>
                             </div>
                         </div>
                     </section>

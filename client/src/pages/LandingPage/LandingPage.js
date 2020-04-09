@@ -46,11 +46,11 @@ export default class LandingPage extends Component {
                     <div className={styles.space}>
                         <h1 className={styles.banner}>About us</h1>
                         <p className={styles.text}>
-                            Clothok is focused on advancing the culture of belonging, for your team as well as our own.
+                            <b>Clothok</b> is focused on advancing the culture of belonging, for your team as well as our own.
                             With this in mind, we make it a priority to create the best possible work environment for
                             our staff, as well as recognize the strides our team make together. The core concepts of
                             autonomy, candid communication, extreme personal ownership, and transparency are integral
-                            to our organizational culture; We believe that by executing these concepts effectively and
+                            to our organizational culture. We believe that by executing these concepts effectively and
                             in tandem, we cultivate an environment in which creativity and original ideas are allowed
                             to thrive.
                         </p>
