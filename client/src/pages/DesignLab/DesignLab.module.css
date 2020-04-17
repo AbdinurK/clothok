@@ -1,0 +1,17 @@
+.icon {
+    /*background-image: url("https://media.reformclothing.com/design_lab/ysd-products/R2004H_Rain_Jacket/R2004H_Rain_Jacket_Front_A_2048.png");*/
+    background-color: white;
+    display: flex;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin: 0 auto;
+}
+.buttons {
+    display: block;
+    margin-right: 80px;
+}
+.buttons > div {
+    margin: 20px;
+}

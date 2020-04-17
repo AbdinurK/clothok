@@ -109,6 +109,18 @@ span {
     margin-left: 30px;
     font-weight: bold;
 }
-.count {
-
+.product__information {
+    background: black;
+    color: white;
+    margin-top: 30px;
+}
+.sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 200px;
+    grid-gap: 70px;
+    margin: 30px 0 50px;
+}
+.sections > div {
+    overflow: hidden;
 }

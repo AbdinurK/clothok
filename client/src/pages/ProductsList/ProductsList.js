@@ -10,9 +10,22 @@ import { Link } from "react-router-dom";
 import Spinner from "../../components/Spinner/Spinner"
 
 class ProductsList extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            count: 4
+        };
+        this.onLoadMore = this.onLoadMore.bind(this)
+    }
 
     componentDidMount() {
         this.props.getProducts();
+    }
+
+    onLoadMore() {
+        this.setState({
+            count: this.state.count + 4
+        })
     }
 
     render() {
@@ -25,8 +38,7 @@ class ProductsList extends Component {
                 <div>
                     <main className={styles.main}>
                         <section className={styles.cards}>
-                            { products.map(product => (
-
+                            { products.slice(0, this.state.count).map(product => (
                                 <div key={ product._id} className={styles.card}>
                                     <div className={styles.card__image}>
                                         <img src={'../../../../' + product.image} alt="sorry"/>
@@ -36,7 +48,6 @@ class ProductsList extends Component {
                                             <Link to={`/products/${product._id}`}>
                                                 <p className={styles.card__title}>{ product.title }</p>
                                             </Link>
-                                            {/*<p className={styles.card__description}>{ product.description }</p>*/}
                                             <p className="card__price">{ product.price } T</p>
                                         </div>
                                         <img src={basket} alt="no" className={styles.basket}/>
@@ -45,6 +56,7 @@ class ProductsList extends Component {
                             )) }
                         </section>
                     </main>
+                    <button onClick={this.onLoadMore}>Load more</button>
                     <Footer/>
                 </div>
             )

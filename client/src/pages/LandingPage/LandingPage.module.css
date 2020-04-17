@@ -86,11 +86,27 @@
     background: black;
     color: white;
     height: 100vh;
-}
-.clients > .container {
     padding-top: 200px;
+    box-sizing: border-box;
 }
-
+.clients__inner {
+    display: flex;
+}
+.testimonials {
+    margin-left: 100px;
+    display: inherit;
+    max-width: 600px;
+}
+.testimonials > div {
+    width: 400px;
+    height: 200px;
+    margin-right: 70px;
+}
+.testimonials > img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+}
 .about {
     height: 100vh;
     background: white;

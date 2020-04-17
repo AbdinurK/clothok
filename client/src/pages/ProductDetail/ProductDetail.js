@@ -6,6 +6,7 @@ import { getProduct } from "../../actions/productAction";
 import Spinner from "../../components/Spinner/Spinner"
 import styles from "./ProductDetail.module.css"
 import { NavLink } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
 
 class ProductDetail extends Component {
 
@@ -42,8 +43,8 @@ class ProductDetail extends Component {
             productContent = <Spinner />;
         } else {
             productContent = (
-                <div className={styles.product}>
-                    <section className={styles.container} key={product._id}>
+                <div className={styles.product} key={product._id}>
+                    <section className={styles.container}>
                         <img src={'../../../../' + product.image} alt="Sorry" className={styles.product__image}/>
                         <div className={styles.product__info}>
                             <h1 className={styles.product__title}>{ product.title }</h1>
@@ -73,6 +74,32 @@ class ProductDetail extends Component {
                             </div>
                         </div>
                     </section>
+                    <div className={styles.product__information}>
+                        <section className={styles.container}>
+                            <div className={styles.sections}>
+                                <div>
+                                    <h2>Product Description</h2>
+                                    { product.description}
+                                </div>
+                                <div>
+                                    <h2>Size Guide</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Sit sed sit eget velit vitae auctor lectus augue.
+                                        Aliquet etiam orci, et et libero.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h2>Care Information</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Sit sed sit eget velit vitae auctor lectus augue.
+                                        Aliquet etiam orci, et et libero.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
                 </div>
             )
         }
@@ -80,6 +107,7 @@ class ProductDetail extends Component {
             <div>
                 <Navbar/>
                 { productContent }
+                <Footer/>
             </div>
         )
     };

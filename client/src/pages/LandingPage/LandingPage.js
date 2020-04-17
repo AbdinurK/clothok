@@ -38,7 +38,41 @@ export default class LandingPage extends Component {
 
                 <section className={styles.clients}>
                     <div className={styles.container}>
-                        <h1 className={styles.banner}>Our clients</h1>
+                        <div className={styles.clients__inner}>
+                            <h1 className={styles.banner}>Our clients</h1>
+                            <div className={styles.testimonials}>
+                                <div>
+                                    <img alt="sorry"/>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        A gravida a nibh tortor ante. Nunc, mattis tempor, in tellus.
+                                    </p>
+                                    <h4>
+                                        @Mike
+                                    </h4>
+                                </div>
+                                <div>
+                                    <img alt="sorry"/>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        A gravida a nibh tortor ante. Nunc, mattis tempor, in tellus.
+                                    </p>
+                                    <h4>
+                                        @Mike
+                                    </h4>
+                                </div>
+                                <div>
+                                    <img alt="sorry"/>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        A gravida a nibh tortor ante. Nunc, mattis tempor, in tellus.
+                                    </p>
+                                    <h4>
+                                        @Mike
+                                    </h4>
+                                </div>
+                        </div>
+                        </div>
                     </div>
                 </section>
 

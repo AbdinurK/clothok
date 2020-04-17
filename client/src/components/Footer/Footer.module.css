@@ -3,8 +3,8 @@
 }
 .container {
     width: 100%;
-    max-width: 1920px;
-    margin-left: 140px;
+    max-width: 1040px;
+    margin: 0 auto;
 }
 .footer__nav {
     display: flex;
