@@ -13,7 +13,7 @@ class Navbar extends Component{
                     <ul className={styles.menu}>
                         <li><NavLink to="/products">All Products</NavLink></li>
                         <li><NavLink to="/">New Arrivals</NavLink></li>
-                        <li><NavLink to="/">Sale</NavLink></li>
+                        <li><NavLink to="/configurator">Sale</NavLink></li>
                         <li><NavLink to="/designLab">Design Lab</NavLink></li>
                     </ul>
                     <ul className={styles.list}>

@@ -4,6 +4,7 @@
     display: flex;
     background-position: center;
     background-repeat: no-repeat;
+    justify-content: space-evenly;
     background-size: cover;
     position: relative;
     margin: 0 auto;

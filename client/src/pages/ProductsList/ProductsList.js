@@ -10,23 +10,11 @@ import { Link } from "react-router-dom";
 import Spinner from "../../components/Spinner/Spinner"
 
 class ProductsList extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            count: 4
-        };
-        this.onLoadMore = this.onLoadMore.bind(this)
-    }
 
     componentDidMount() {
         this.props.getProducts();
     }
 
-    onLoadMore() {
-        this.setState({
-            count: this.state.count + 4
-        })
-    }
 
     render() {
         const { products, loading } = this.props.product;
@@ -38,7 +26,7 @@ class ProductsList extends Component {
                 <div>
                     <main className={styles.main}>
                         <section className={styles.cards}>
-                            { products.slice(0, this.state.count).map(product => (
+                            { products.map(product => (
                                 <div key={ product._id} className={styles.card}>
                                     <div className={styles.card__image}>
                                         <img src={'../../../../' + product.image} alt="sorry"/>
@@ -56,7 +44,6 @@ class ProductsList extends Component {
                             )) }
                         </section>
                     </main>
-                    <button onClick={this.onLoadMore}>Load more</button>
                     <Footer/>
                 </div>
             )
