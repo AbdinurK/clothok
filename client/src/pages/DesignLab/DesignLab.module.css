@@ -4,14 +4,13 @@
     display: flex;
     background-position: center;
     background-repeat: no-repeat;
-    justify-content: space-evenly;
+    justify-content: space-between;
     background-size: cover;
     position: relative;
-    margin: 0 auto;
 }
 .buttons {
     display: block;
-    margin-right: 80px;
+    max-width: 150px;
 }
 .buttons > div {
     margin: 20px;
