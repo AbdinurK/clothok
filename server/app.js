@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require("path");
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
@@ -30,7 +31,9 @@ app.use((req, res, next) => {
 });
 app.use('/products', productRoutes);
 app.use('/orders', orderRoutes);
-app.use('./public', express.static('uploads'));
+app.use(function(req, res, next) {
+    res.sendFile(path.join(__dirname, 'client/public', 'index.html'));
+});
 app.use((req, res, next) => {
     const error = new Error('Not found!');
     error.status = 404;

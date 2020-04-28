@@ -1,21 +1,28 @@
-import React from "react";
+import React, { Component } from "react";
 
-function Filter() {
-    return (
-        <div>
-            <div>
-                <p>Filter: </p>
-                <select>
-                    <option>T-Shirt</option>
-                    <option>Jacket</option>
-                    <option>Bomber</option>
-                </select>
-            </div>
-            <div>
+class Filter extends Component {
 
+    buttons = [
+        { name: 'zip', title: 'Zip' },
+        { name: 'fleece', title: 'Fleece' },
+        { name: 'windbreaker', title: 'Windbreaker' }
+    ];
+
+    render() {
+        const { filter } = this.props;
+        const buttons = this.buttons.map(({ name, title }) => {
+            const isActive = filter === name;
+            const clazz = isActive ? 'btn-info' : 'btn-outline-secondary';
+            return (
+                <button type="button" className={`btn ${clazz}`} key={name}>{ title }</button>
+            )
+        });
+        return (
+            <div className="btn-group" style={{ marginTop: '20px' }}>
+                {buttons}
             </div>
-        </div>
-    )
+        )
+    }
 }
 
 export default Filter;

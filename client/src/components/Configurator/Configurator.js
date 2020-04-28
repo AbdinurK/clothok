@@ -45,7 +45,6 @@ function PanelItem(props) {
 }
 
 function DropDown() {
-    const colors = ['#CA2929', '#F9C50D', '#167ECA', '#00ECD0', '#B5E4FF', '#8B8B8B', '#8F7CFF'];
     return (
         <div className={styles.dropdown}>
                 <div className={styles.colors}>

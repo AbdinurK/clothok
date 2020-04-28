@@ -14,3 +14,18 @@ code {
   max-width: 1040px;
   margin: 0 auto;
 }
+.btn-info {
+  background-color: blueviolet;
+  outline: none;
+  color: white;
+}
+
+.btn-outline-secondary {
+  background-color: cornflowerblue;
+  outline: none;
+  color: white;
+}
+
+.btn {
+  padding: 10px;
+}
