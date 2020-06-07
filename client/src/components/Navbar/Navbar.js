@@ -4,8 +4,15 @@ import user from "./assets/user.svg";
 import basket from "./assets/basket.svg";
 import styles from "./Navbar.module.css"
 
-class Navbar extends Component{
+class Header extends Component {
+
+    state = {
+        count: 0
+    };
+
+
     render() {
+        const { count } = this.state;
         return (
             <nav>
                 <div className={styles.navbar}>
@@ -18,7 +25,12 @@ class Navbar extends Component{
                     </ul>
                     <ul className={styles.list}>
                         <li><NavLink to="/auth"><img src={user} className={styles.black} alt="no"/></NavLink></li>
-                        <li><NavLink to="/basket"><img src={basket} className={styles.black} alt="no"/></NavLink></li>
+                        <li>
+                            <NavLink to="/basket">
+                                <img src={basket} className={styles.black} alt="no"/>
+                            </NavLink>
+                            <span>{ count }</span>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -26,4 +38,4 @@ class Navbar extends Component{
     }
 }
 
-export default Navbar;
+export default Header;

@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Navbar from "../../components/Navbar/Navbar";
-import { getProduct } from "../../actions/productAction";
-import Spinner from "../../components/Spinner/Spinner"
+import Navbar from "../../Navbar/Navbar";
+import { getProduct } from "../../../actions/productAction";
+import Spinner from "../../Spinner/Spinner"
 import styles from "./ProductDetail.module.css"
 import { NavLink } from "react-router-dom";
-import Footer from "../../components/Footer/Footer";
+import Footer from "../../Footer/Footer";
 
 class ProductDetail extends Component {
 

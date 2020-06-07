@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom";
 import user from "./assets/user.svg";
 import basket from "./assets/basket.svg";
 import design from "./assets/design.png"
-import Footer from "../../components/Footer/Footer";
+import Footer from "../../Footer/Footer";
 
 export default class LandingPage extends Component {
     render() {
