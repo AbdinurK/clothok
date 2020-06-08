@@ -1,8 +1,7 @@
 import React, { Component} from "react";
+import styles from "./Configurator.module.css"
 
 class Configurator extends Component {
-
-    state = {};
 
     onClickColor = (e) => {
         const color = e.target.name;
@@ -11,7 +10,7 @@ class Configurator extends Component {
 
     render(){
         return (
-            <div style={{ width: '60px' }}>
+            <div className={styles.configurator}>
                 <button type="button" onClick={this.onClickColor} name="purple">Purple</button>
                 <button type="button" onClick={this.onClickColor} name="red">Red</button>
                 <button type="button" onClick={this.onClickColor} name="green">Green</button>

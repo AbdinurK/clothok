@@ -5,7 +5,8 @@ import logo from "../../pages/DesignLab/156568.svg";
 class Jacket extends Component {
 
     state = {
-        selected: '',
+        selectedElement: '',
+        isActive: '',
         body: '#FFFFFF',
         sleeves: '#FFFFFF',
         collar: '#FFFFFF',
@@ -22,24 +23,21 @@ class Jacket extends Component {
 
     componentDidUpdate(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot: SS): void {
         const { selected, color } = this.props;
-        console.log(selected, color);
-        if (this.props.color !== prevProps.color) {
-            this.updateJacket()
+        if (selected && color) {
+            if (color !== prevProps.color) {
+                this.updateJacket(selected, color)
+            }
         }
     }
 
-    updateJacket() {
-        const { selected, color } = this.props;
-        if (!this.props) {
-            return;
-        }
-        if (Object.keys(this.state) === selected) {
-            console.log("true")
-        }
+    updateJacket(selected, color) {
+        this.setState({
+            [selected]: color
+        })
     };
 
     render(){
-        const { sleeves, collar, zips, hoodLine, body, hood, insideLine, initialColor } = this.state;
+        const { sleeves, collar, zips, hoodLine, body, hood, insideLine } = this.state;
         return (
             <svg id="R2004H_Rain_Jacket_Front_A" xmlns="http://www.w3.org/2000/svg"
                  xlinkHref="http://www.w3.org/1999/xlink" viewBox="0 0 2048 2048" width="2048" height="1048">

@@ -5,6 +5,7 @@ import DesignLab from "./components/pages/DesignLab/DesignLab";
 import ProductDetail from "./components/pages/ProductDetail/ProductDetail"
 import Configurator from "./components/Configurator/Configurator";
 import { Route, Switch } from "react-router-dom";
+import R1042 from "./components/R1042";
 
 class MainRouter extends Component {
     render() {
@@ -15,7 +16,7 @@ class MainRouter extends Component {
                     <Route path="/products" exact component={ProductsList}/>
                     <Route path="/designLab" component={DesignLab}/>
                     <Route path="/products/:id" exact component={ProductDetail}/>
-                    <Route path="/configurator" exact component={Configurator}/>
+                    <Route path="/configurator" exact component={R1042}/>
                 </Switch>
             </div>
         )

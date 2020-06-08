@@ -4,6 +4,7 @@ import Jacket from "../../Clothes/Jacket/Jacket";
 import Configurator from "../../Configurator/Configurator";
 import Row from "../../Row/Row";
 import Elements from "../../Clothes/Elements";
+import R1042 from "../../R1042";
 
 class DesignLab extends Component {
 
