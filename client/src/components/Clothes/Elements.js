@@ -8,12 +8,23 @@ const Elements = (props) => {
         props.onClickElement(element)
     };
 
+    const array = [
+        { name: 'body', label: 'Body' },
+        { name: 'collar', label: 'Collar' },
+        { name: 'sleeves', label: 'Sleeves' },
+        { name: 'hood', label: 'Hood' }
+    ];
+
+
+    const elements = array.map((element) => {
+        return (
+            <button type="button" onClick={onClickElement} name={element.name}>{element.label}</button>
+        )
+    });
+
     return (
         <div style={{ width: '60px' }}>
-            <button type="button" onClick={onClickElement} name="body">Body</button>
-            <button type="button" onClick={onClickElement} name="collar">Collar</button>
-            <button type="button" onClick={onClickElement} name="sleeves">Sleeves</button>
-            <button type="button" onClick={onClickElement} name="hood">Hood</button>
+            { elements }
         </div>
     )
 };
