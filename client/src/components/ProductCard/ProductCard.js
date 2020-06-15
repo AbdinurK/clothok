@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import basket from "../pages/ProductsList/assets/basket.svg";
+import basket from "../ProductsList/assets/basket.svg";
 import "./ProductCard.css"
 
 const ProductCard = ({ product }) => {

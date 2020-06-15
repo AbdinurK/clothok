@@ -1,13 +1,13 @@
 import React, {Component} from "react";
 import { connect } from "react-redux"
-import { getProducts } from "../../../actions/productAction";
+import { getProducts } from "../../_actions/productAction";
 import PropTypes  from "prop-types";
-import Navbar from "../../Navbar/Navbar";
-import Footer from "../../Footer/Footer";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 import styles from "./ProductsList.module.css"
-import Spinner from "../../Spinner/Spinner"
-import Search from "../../Search/Search";
-import ProductCard from "../../Product/ProductCard";
+import Spinner from "../Spinner/Spinner"
+import Search from "../Search/Search";
+import ProductCard from "../ProductCard/ProductCard";
 
 class ProductsList extends Component {
 

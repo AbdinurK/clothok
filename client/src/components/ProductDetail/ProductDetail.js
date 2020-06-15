@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Navbar from "../../Navbar/Navbar";
-import { getProduct } from "../../../actions/productAction";
-import Spinner from "../../Spinner/Spinner"
+import Navbar from "../Navbar/Navbar";
+import { getProduct } from "../../_actions/productAction";
+import Spinner from "../Spinner/Spinner"
 import styles from "./ProductDetail.module.css"
 import { NavLink } from "react-router-dom";
-import Footer from "../../Footer/Footer";
+import Footer from "../Footer/Footer";
 
 class ProductDetail extends Component {
 
@@ -45,7 +45,7 @@ class ProductDetail extends Component {
             productContent = (
                 <div className={styles.product} key={product._id}>
                     <section className={styles.container}>
-                        <img src={'../../../../' + product.image} alt="Sorry" className={styles.product__image}/>
+                        <img src={product.image} alt="Sorry" className={styles.product__image}/>
                         <div className={styles.product__info}>
                             <h1 className={styles.product__title}>{ product.title }</h1>
                             <p className={styles.product__description}>Classic White</p>

@@ -1,11 +1,11 @@
 import React, {Component} from "react";
-import LandingPage from "./components/pages/LandingPage/LandingPage"
-import ProductsList from "./components/pages/ProductsList/ProductsList";
-import DesignLab from "./components/pages/DesignLab/DesignLab";
-import ProductDetail from "./components/pages/ProductDetail/ProductDetail"
+import LandingPage from "./components/LandingPage/LandingPage"
+import ProductsList from "./components/ProductsList/ProductsList";
+import DesignLab from "./components/DesignLab/DesignLab";
+import ProductDetail from "./components/ProductDetail/ProductDetail"
 import Configurator from "./components/Configurator/Configurator";
 import { Route, Switch } from "react-router-dom";
-import R1042 from "./components/R1042";
+import R1042 from "./components/Clothes/R1042";
 
 class MainRouter extends Component {
     render() {

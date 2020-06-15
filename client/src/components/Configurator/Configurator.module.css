@@ -1,3 +1,11 @@
 .configurator {
     width: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2px;
+}
+.color {
+    outline: none;
+    width: 20px;
+    height: 20px;
 }

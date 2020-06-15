@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import DesignNav from "../../DesignNav/DesignNav";
-import Jacket from "../../Clothes/Jacket/Jacket";
-import Configurator from "../../Configurator/Configurator";
-import Row from "../../Row/Row";
-import Elements from "../../Clothes/Elements";
-import R1042 from "../../R1042";
+import DesignNav from "../DesignNav/DesignNav";
+import R2004H from "../Clothes/R2004H";
+import Configurator from "../Configurator/Configurator";
+import Row from "../Row/Row";
+import Elements from "../Elements";
 
 class DesignLab extends Component {
 
@@ -19,9 +18,9 @@ class DesignLab extends Component {
         })
     };
 
-    onClickElement = (element) => {
+    onClickElement = (selectedElement) => {
         this.setState({
-            selectedElement: element
+            selectedElement
         })
     };
 
@@ -34,7 +33,7 @@ class DesignLab extends Component {
                     <div>
                         <Row
                             left={<Configurator onClickColor={this.onClickColor}/>}
-                            center={<Jacket color={color} selected={selectedElement}/>}
+                            center={<R2004H color={color} selected={selectedElement}/>}
                             right={<Elements onClickElement={this.onClickElement}/>}
                         />
                     </div>

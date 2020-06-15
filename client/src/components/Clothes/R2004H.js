@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import logo from "../../pages/DesignLab/156568.svg";
+import logo from "../DesignLab/156568.svg";
 
 
-class Jacket extends Component {
+class R2004H extends Component {
 
     state = {
         selectedElement: '',
@@ -121,4 +121,4 @@ class Jacket extends Component {
 }
 
 
-export default Jacket
+export default R2004H

@@ -36,6 +36,8 @@ p {
     list-style: none;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    align-content: center;
     max-width: 190px;
     padding: 0;
 }
