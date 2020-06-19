@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Navbar from "../Navigation/Navbar";
+import Navbar from "../Navigation/Navigation";
 import {getProduct} from "../../_actions/productAction";
 import Spinner from "../Spinner/Spinner"
 import Footer from "../Footer/Footer";
