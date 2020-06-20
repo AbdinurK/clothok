@@ -13,9 +13,8 @@ class MainRouter extends Component {
                 <Switch>
                     <Route exact path="/" component={LandingPage}/>
                     <Route path="/products" exact component={ProductsList}/>
-                    <Route path="/designLab" component={DesignLab}/>
+                    <Route path="/designLab/:id" component={DesignLab}/>
                     <Route path="/products/:id" exact component={ProductDetail}/>
-                    <Route path="/configurator" exact component={R1042}/>
                 </Switch>
             </div>
         )

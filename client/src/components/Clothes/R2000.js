@@ -4,7 +4,7 @@ import React from "react";
 const R2000 = () => {
     return (
         <svg id="R2000_Bomber_Jacket_Front_A" xmlns="http://www.w3.org/2000/svg"
-             xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2048 2048" width="2048" height="2048">
+             xlinkHref="http://www.w3.org/1999/xlink" viewBox="0 0 2048 2048" width="2048" height="1048">
 
             <g id="custom-color-swatches">
                 <g id="Group_R2000_Zip_Pockets_Sleeve">

@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./ProductDetail.module.css";
-import {NavLink} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const DetailPage = ({ product }) => {
     const { _id, image, title, price, delivery, description } = product;
-    console.log(image)
+    const name = 'R2000';
+
     return (
         <div className={styles.product} key={_id}>
             <section className={styles.container}>
@@ -32,8 +33,8 @@ const DetailPage = ({ product }) => {
                     <span>Delivery week: </span>
                     <span className={styles.product__delivery}>{ delivery } week</span>
                     <div className={styles.action__button}>
-                        <NavLink to="/designLab">Edit design</NavLink>
-                        <NavLink to="/order">Order</NavLink>
+                        <Link to={`/designLab/${name}`}>Edit design</Link>
+                        <Link to="/order">Order</Link>
                     </div>
                 </div>
             </section>

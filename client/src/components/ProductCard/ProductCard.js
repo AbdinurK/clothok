@@ -5,7 +5,6 @@ import "./ProductCard.css"
 
 const ProductCard = ({ product }) => {
     const { _id, image, title, price } = product;
-    console.log(image)
     return (
         <div className="card">
             <div className="card__image">

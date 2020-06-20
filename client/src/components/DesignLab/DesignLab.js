@@ -4,6 +4,8 @@ import R2004H from "../Clothes/R2004H";
 import Configurator from "../Configurator/Configurator";
 import Row from "../Row/Row";
 import Elements from "../Elements";
+import C1071 from "../Clothes/C1071";
+import R2000 from "../Clothes/R2000";
 
 class DesignLab extends Component {
 
@@ -11,6 +13,10 @@ class DesignLab extends Component {
         color: '',
         selectedElement: ''
     };
+
+    componentDidMount() {
+        const component = this.props.match.params.id;
+    }
 
     onClickColor = (color) => {
         this.setState({
@@ -26,6 +32,17 @@ class DesignLab extends Component {
 
     render() {
         const { color, selectedElement } = this.state;
+        const load = this.props.match.params.id;
+        let display;
+        if (load === 'C1071') {
+            display = <C1071/>
+        }
+        if (load === 'C1071') {
+            display = <C1071/>
+        }
+        if (load === 'R2000') {
+            display = <R2000/>
+        }
         return (
             <div>
                 <DesignNav/>
@@ -33,7 +50,7 @@ class DesignLab extends Component {
                     <div>
                         <Row
                             left={<Configurator onClickColor={this.onClickColor}/>}
-                            center={<R2004H color={color} selected={selectedElement}/>}
+                            center={display}
                             right={<Elements onClickElement={this.onClickElement}/>}
                         />
                     </div>
