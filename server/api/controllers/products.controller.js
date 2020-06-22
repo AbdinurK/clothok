@@ -21,6 +21,7 @@ exports.createProduct = (req, res, next) => {
         _id: new mongoose.Types.ObjectId(),
         title: req.body.title,
         image: req.file.path,
+        code: req.body.code,
         description: req.body.description,
         delivery: req.body.delivery,
         orderCount: req.body.orderCount,

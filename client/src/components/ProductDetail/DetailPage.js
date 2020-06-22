@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./ProductDetail.module.css";
 import { Link } from "react-router-dom";
 
 const DetailPage = ({ product }) => {
-    const { _id, image, title, price, delivery, description } = product;
-    const name = 'R2000';
+    const { _id, image, title, price, delivery, description, code } = product;
 
     return (
         <div className={styles.product} key={_id}>
@@ -33,7 +32,7 @@ const DetailPage = ({ product }) => {
                     <span>Delivery week: </span>
                     <span className={styles.product__delivery}>{ delivery } week</span>
                     <div className={styles.action__button}>
-                        <Link to={`/designLab/${name}`}>Edit design</Link>
+                        <Link to={`/designLab/${code}`}>Edit design</Link>
                         <Link to="/order">Order</Link>
                     </div>
                 </div>

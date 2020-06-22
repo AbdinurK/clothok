@@ -6,6 +6,9 @@ import Row from "../Row/Row";
 import Elements from "../Elements";
 import C1071 from "../Clothes/C1071";
 import R2000 from "../Clothes/R2000";
+import R1042 from "../Clothes/R1042";
+import R2002 from "../Clothes/R2002";
+import R1051 from "../Clothes/R1051";
 
 class DesignLab extends Component {
 
@@ -34,14 +37,14 @@ class DesignLab extends Component {
         const { color, selectedElement } = this.state;
         const load = this.props.match.params.id;
         let display;
-        if (load === 'C1071') {
-            display = <C1071/>
+        if (load === 'R1042') {
+            display = <R1042 color={color} selected={selectedElement}/>
         }
-        if (load === 'C1071') {
-            display = <C1071/>
+        if (load === 'R2002') {
+            display = <R2002 color={color} selected={selectedElement}/>
         }
-        if (load === 'R2000') {
-            display = <R2000/>
+        if (load === 'R1051') {
+            display = <R1051 color={color} selected={selectedElement}/>
         }
         return (
             <div>
