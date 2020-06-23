@@ -4,7 +4,6 @@ import ProductsList from "./components/ProductsList/ProductsList";
 import DesignLab from "./components/DesignLab/DesignLab";
 import ProductDetail from "./components/ProductDetail/ProductDetail"
 import { Route, Switch } from "react-router-dom";
-import R1042 from "./components/Clothes/R1042";
 
 class MainRouter extends Component {
     render() {
