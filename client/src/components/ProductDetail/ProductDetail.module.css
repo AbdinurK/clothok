@@ -36,13 +36,13 @@ p {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    align-content: center;
     max-width: 190px;
     padding: 0;
 }
-.box__item {
-    text-align: center;
+.box > li {
+    display: inherit;
+    justify-content: center;
+    align-items: center;
     width: 30px;
     height: 30px;
     border: 2px solid #000000;

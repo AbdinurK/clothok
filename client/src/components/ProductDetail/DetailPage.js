@@ -1,6 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom"
 import styles from "./ProductDetail.module.css";
-import { Link } from "react-router-dom";
 
 const DetailPage = ({ product }) => {
     const { _id, image, title, price, delivery, description, code } = product;
@@ -15,11 +15,11 @@ const DetailPage = ({ product }) => {
                     <p className={styles.product__price}>{ price } T</p>
                     <p className={styles.size__text}>Choose size:</p>
                     <ul className={styles.box}>
-                        <li className={styles.box__item}>XS</li>
-                        <li className={styles.box__item}>S</li>
-                        <li className={styles.box__item}>M</li>
-                        <li className={styles.box__item}>L</li>
-                        <li className={styles.box__item}>XL</li>
+                        <li>XS</li>
+                        <li>S</li>
+                        <li>M</li>
+                        <li>L</li>
+                        <li>XL</li>
                     </ul>
                     <div className={styles.product__quantity}>
                         <p>Quantity:</p>

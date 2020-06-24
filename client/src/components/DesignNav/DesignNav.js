@@ -9,9 +9,8 @@ const DesignNav = () => {
         <div className={styles.designNav}>
             <div className={styles.action__button}>
                 <NavLink to="/products">Exit</NavLink>
-                <img src={undo} alt="sorry"/>
-                | &nbsp;
-                <img src={redo} alt="sorry"/>
+                <button><img src={undo} alt="sorry"/></button>
+                <button><img src={redo} alt="sorry"/></button>
             </div>
             <NavLink to="/" className={styles.title}>Clothok</NavLink>
             <div className={styles.action__button}>
