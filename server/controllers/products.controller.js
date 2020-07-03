@@ -1,4 +1,3 @@
-const mongoose = require('mongoose');
 const Product = require('../models/product.model');
 const Oder = require('../models/order.model');
 
@@ -20,7 +19,6 @@ exports.getAllProducts = (req, res, next) => {
 
 exports.createProduct = (req, res, next) => {
     const product = new Product({
-        _id: new mongoose.Types.ObjectId(),
         title: req.body.title,
         image: req.file.path,
         code: req.body.code,

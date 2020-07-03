@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Order = require('../models/order.model');
+const Order = mongoose.model('orders');
 
 exports.getAllOrders = (req, res, next) => {
     Order
@@ -16,7 +16,6 @@ exports.getAllOrders = (req, res, next) => {
 };
 exports.createOrder = (req, res, next) => {
     const order = new Order({
-        _id: new mongoose.Types.ObjectId(),
         productId: req.body.productId,
         quantity: req.body.quantity,
     });
