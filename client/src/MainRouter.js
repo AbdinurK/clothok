@@ -11,9 +11,9 @@ class MainRouter extends Component {
             <div>
                 <Switch>
                     <Route exact path="/" component={LandingPage}/>
-                    <Route path="/products" exact component={ProductsList}/>
-                    <Route path="/designLab/:id" component={DesignLab}/>
-                    <Route path="/products/:id" exact component={ProductDetail}/>
+                    <Route exact path="/products/:id" component={ProductDetail}/>
+                    <Route exact path="/products" component={ProductsList}/>
+                    <Route exact path="/designLab/:id" component={DesignLab}/>
                 </Switch>
             </div>
         )

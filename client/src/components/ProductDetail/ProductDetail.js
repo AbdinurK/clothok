@@ -21,7 +21,7 @@ class ProductDetail extends Component {
             productContent = <Spinner />;
         } else {
             productContent = (
-                <DetailPage product={product} key={product._id}/>
+                <DetailPage product={product}/>
             )
         }
         return (

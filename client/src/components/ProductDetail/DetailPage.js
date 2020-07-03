@@ -3,12 +3,11 @@ import { Link } from "react-router-dom"
 import styles from "./ProductDetail.module.css";
 
 const DetailPage = ({ product }) => {
-    const { _id, image, title, price, delivery, description, code } = product;
-
+    const { image, title, price, delivery, description, code } = product;
     return (
-        <div className={styles.product} key={_id}>
+        <div className={styles.product}>
             <section className={styles.container}>
-                <img src={image} alt="Sorry" className={styles.product__image}/>
+                <img src={`${process.env.PUBLIC_URL}/${image}`} alt="Sorry" className={styles.product__image}/>
                 <div className={styles.product__info}>
                     <h1 className={styles.product__title}>{ title }</h1>
                     <p className={styles.product__description}>Classic White</p>
