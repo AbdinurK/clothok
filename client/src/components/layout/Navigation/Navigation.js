@@ -24,7 +24,7 @@ class Header extends Component {
                         <li><NavLink to="/designLab">Design Lab</NavLink></li>
                     </ul>
                     <ul className={styles.list}>
-                        <li><NavLink to="/auth"><img src={user} className={styles.black} alt="no"/></NavLink></li>
+                        <li><NavLink to="/login"><img src={user} className={styles.black} alt="no"/></NavLink></li>
                         <li>
                             <NavLink to="/basket">
                                 <img src={basket} className={styles.black} alt="no"/>
