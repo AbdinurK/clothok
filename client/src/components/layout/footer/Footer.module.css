@@ -1,9 +1,10 @@
 .footer {
-    padding: 60px 0;
+    padding: 20px;
+    margin-top: auto;
 }
 .container {
     width: 100%;
-    max-width: 1040px;
+    max-width: 1340px;
     margin: 0 auto;
 }
 .footer__nav {
@@ -19,5 +20,5 @@
 }
 .footer__copyright {
     font-weight: normal;
-    margin: 40px 0;
+    margin: 0;
 }

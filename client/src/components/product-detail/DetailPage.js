@@ -13,18 +13,18 @@ const DetailPage = ({ product }) => {
                     <p className={styles.product__description}>Classic White</p>
                     <p className={styles.product__price}>{ price } T</p>
                     <p className={styles.size__text}>Choose size:</p>
-                    <ul className={styles.box}>
-                        <li>XS</li>
-                        <li>S</li>
-                        <li>M</li>
-                        <li>L</li>
-                        <li>XL</li>
-                    </ul>
+                    <select className={styles.box}>
+                        <option>XS</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                    </select>
                     <div className={styles.product__quantity}>
                         <p>Quantity:</p>
                         <div className={styles.buttons}>
                             <button>+</button>
-                            <div className={styles.count}></div>
+                            <div className={styles.count}>0</div>
                             <button>-</button>
                         </div>
                     </div>

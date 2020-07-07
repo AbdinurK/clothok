@@ -1,13 +1,12 @@
 import React, {Component} from "react";
 import { connect } from "react-redux"
-import { getProducts } from "../../actions/productActions";
 import PropTypes  from "prop-types";
-import Navbar from "../layout/Navigation/Navigation";
-import Footer from "../Footer/Footer";
+import Navbar from "../layout/navbar/Navigation";
+import Footer from "../layout/footer/Footer";
+import Spinner from "../spinner/Spinner"
+import ProductCard from "../product-card/ProductCard";
+import { getProducts } from "../../store/actions/productActions";
 import styles from "./ProductsList.module.css"
-import Spinner from "../Spinner/Spinner"
-import Search from "../Search/Search";
-import ProductCard from "../ProductCard/ProductCard";
 
 class ProductsList extends Component {
 
@@ -57,17 +56,14 @@ class ProductsList extends Component {
                             { dataSource }
                         </section>
                     </main>
-                    <Footer/>
                 </div>
             )
         }
         return (
-            <div>
+            <div className={styles.page}>
                 <Navbar/>
-                <div className={styles.search}>
-                    <Search onSearchChange={this.onSearchChange}/>
-                </div>
                 { productsContent }
+                <Footer/>
             </div>
         )
     }

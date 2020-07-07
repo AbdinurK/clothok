@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
-import { registerUser } from "../../actions/authActions"
+import { registerUser } from "../../store/actions/authActions"
 import PropTypes from "prop-types";
 import classnames from "classnames";
 
@@ -16,12 +16,13 @@ class Register extends Component {
         errors: {}
     };
 
-    componentWillReceiveProps(nextProps: Readonly<P>, nextContext: any): void {
-        if (nextProps.errors) {
-            this.setState({
+    static getDerivedStateFromProps(nextProps, prevState) {
+        if (nextProps.errors !== prevState.errors) {
+            return {
                 errors: nextProps.errors
-            });
+            }
         }
+        else return null
     }
 
     componentDidMount() {
@@ -48,8 +49,6 @@ class Register extends Component {
         this.props.registerUser(newUser, this.props.history);
     };
 
-
-
     render() {
         const { errors } = this.state;
         const { name, email, password, password2 } = this.state;
@@ -69,7 +68,7 @@ class Register extends Component {
                                 Already have an account? <Link to="login">Login</Link>
                             </p>
                         </div>
-                        <form noValidate onSubmit={this.onSubmit}>
+                        <form onSubmit={this.onSubmit}>
                             <div className="input-field col s12">
                                 <input
                                     onChange={this.onChange}

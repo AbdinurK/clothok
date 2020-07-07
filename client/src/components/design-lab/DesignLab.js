@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import DesignNav from "../DesignNav/DesignNav";
-import R2004H from "../Clothes/R2004H";
-import Configurator from "../Configurator/Configurator";
-import Row from "../Row/Row";
+import DesignNav from "../design-navigation/DesignNav";
+import R2004H from "../assets/R2004H";
+import Configurator from "../configurator/Configurator";
+import Row from "../row/Row";
 import Elements from "../Elements";
-import C1071 from "../Clothes/C1071";
-import R2000 from "../Clothes/R2000";
-import R1042 from "../Clothes/R1042";
-import R2002 from "../Clothes/R2002";
-import R1051 from "../Clothes/R1051";
+import C1071 from "../assets/C1071";
+import R2000 from "../assets/R2000";
+import R1042 from "../assets/R1042";
+import R2002 from "../assets/R2002";
+import R1051 from "../assets/R1051";
 
 class DesignLab extends Component {
 

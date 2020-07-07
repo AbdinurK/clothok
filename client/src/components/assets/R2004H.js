@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "../DesignLab/156568.svg";
+import logo from "../design-lab/156568.svg";
 
 
 class R2004H extends Component {
