@@ -31,7 +31,7 @@ const DetailPage = ({ product }) => {
                     <span>Delivery week: </span>
                     <span className={styles.product__delivery}>{ delivery } week</span>
                     <div className={styles.action__button}>
-                        <Link to={`/designLab/${code}`}>Edit design</Link>
+                        <Link to={`/design-lab/${code}`}>Edit design</Link>
                         <Link to="/order">Order</Link>
                     </div>
                 </div>

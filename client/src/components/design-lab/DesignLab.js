@@ -9,6 +9,7 @@ import R2000 from "../assets/R2000";
 import R1042 from "../assets/R1042";
 import R2002 from "../assets/R2002";
 import R1051 from "../assets/R1051";
+import DesignPanel from "../design-panel/DesignPanel";
 
 class DesignLab extends Component {
 
@@ -16,10 +17,6 @@ class DesignLab extends Component {
         color: '',
         selectedElement: ''
     };
-
-    componentDidMount() {
-        const component = this.props.match.params.id;
-    }
 
     onClickColor = (color) => {
         this.setState({
@@ -52,7 +49,7 @@ class DesignLab extends Component {
                 <div className="container">
                     <div>
                         <Row
-                            left={<Configurator onClickColor={this.onClickColor}/>}
+                            left={<DesignPanel onClickColor={this.onClickColor}/>}
                             center={display}
                             right={<Elements onClickElement={this.onClickElement}/>}
                         />

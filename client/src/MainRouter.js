@@ -13,6 +13,8 @@ import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./store/actions/authActions"
 import store from "./store/store";
 import Laboratory from "./components/design-lab/Laboratory";
+import Configurator from "./components/configurator/Configurator";
+import DesignPanel from "./components/design-panel/DesignPanel";
 
 if (localStorage.jwtToken) {
     const token = localStorage.jwtToken;
@@ -38,6 +40,7 @@ class MainRouter extends Component {
                     <Route exact path="/design-lab" component={Laboratory}/>
                     <Route exact path="/register" component={Register}/>
                     <Route exact path="/login" component={Login} />
+                    <Route exact path="/configurator" component={DesignPanel} />
                     <PrivateRoute exact path="/dashboard" component={Dashboard} />
                 </Switch>
             </div>
