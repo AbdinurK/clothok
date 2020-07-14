@@ -38,7 +38,7 @@ class R1051 extends Component {
         const { sleeves, collar, zips, hoodLine, body, hood, insideLine } = this.state;
         return (
             <svg id="R1051_Knitted_Cardigan_Front_A" xmlns="http://www.w3.org/2000/svg"
-                 xlinkHref="http://www.w3.org/1999/xlink" viewBox="0 0 2048 2048" width="2048" height="1048">
+                 xlinkHref="http://www.w3.org/1999/xlink" viewBox="0 0 2048 2048" width="500" height="500">
 
                 <g id="custom-color-swatches">
                     <g id="Group_R1051_Rib">

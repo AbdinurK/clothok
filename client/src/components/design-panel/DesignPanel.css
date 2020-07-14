@@ -180,3 +180,33 @@
     padding: 5px 10px 15px 10px;
     text-align: center;
 }
+.panel .color-customize-panel .plain-color-list .color-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.panel .color-customize-panel .plain-color-list .icon-color-wrapper {
+    width: 36px;
+    height: 36px;
+    margin: 4px;
+    border-radius: 50%;
+}
+.panel .icon-color-wrapper {
+    display: block;
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+}
+.panel .icon-color-wrapper .back {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.panel .color-customize-panel .plain-color-list .icon-color-wrapper .back {
+    box-shadow: 0 0 1px #878889 inset;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+}
+.none {
+    display: none;
+}
