@@ -10,7 +10,8 @@ import PanelElementList from "./Panel-Element-List";
 class DesignPanel extends Component {
 
     state = {
-        selected: false
+        selected: false,
+        element: ''
     };
 
     handleColorClick = () => {
@@ -18,6 +19,7 @@ class DesignPanel extends Component {
             selected: !state.selected
         }))
     };
+
 
     render() {
         return (
@@ -46,9 +48,8 @@ class DesignPanel extends Component {
                     </div>
                     <button className="btn-reset">RESET</button>
                 </div>
-                <div className={this.state.selected ? 'color-customize-panel' : 'none'}>
-                    <PanelElementList/>
-                    <PanelColorList/>
+                <div className="color-customize-panel">
+                    <PanelElementList selected={this.state.selected}/>
                 </div>
             </div>
         )

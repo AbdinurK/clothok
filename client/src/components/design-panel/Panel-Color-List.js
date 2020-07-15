@@ -1,9 +1,15 @@
 import React from "react";
+import { connect } from "react-redux";
+import {setColor} from "../../store/actions/designActions"
 import cross from "./assets/cross.svg";
 
-const PanelColorList = () => {
+const PanelColorList = (props) => {
+    const panelElementList = props.selected;
+    const handleSelected = e => {
+        props.setColor(e.target.style.background)
+    };
     return (
-        <div className="plain-color-list">
+        <div className={ panelElementList ? "plain-color-list" : "none" }>
             <div className="close-panel">
                 <a>
                     <img className="icon-close" src={cross} alt="cross"/>
@@ -14,22 +20,19 @@ const PanelColorList = () => {
                 <div id="scrollbar-1594714212310" className="scrollbar-container panel-scroll-container">
                     <div className="scrollable-content for-mac ">
                         <div className="color-list">
-                            <a title="White" className="icon-color-wrapper">
-                                <div className="back" style={{ background: 'rgb(255, 255, 255)' }}/>
+                            <a title="White" className="icon-color-wrapper" onClick={handleSelected}>
+                                <div className="back" style={{ background: 'purple' }}/>
                             </a>
-                            <a title="White" className="icon-color-wrapper">
+                            <a title="White" className="icon-color-wrapper" onClick={handleSelected}>
                                 <div className="back" style={{ background: 'rgb(23, 23, 23)' }}/>
                             </a>
-                            <a title="White" className="icon-color-wrapper">
+                            <a title="White" className="icon-color-wrapper" onClick={handleSelected}>
                                 <div className="back" style={{ background: 'rgb(23, 23, 23)' }}/>
                             </a>
-                            <a title="White" className="icon-color-wrapper">
+                            <a title="White" className="icon-color-wrapper" onClick={handleSelected}>
                                 <div className="back" style={{ background: 'rgb(23, 23, 23)' }}/>
                             </a>
-                            <a title="White" className="icon-color-wrapper">
-                                <div className="back" style={{ background: 'rgb(23, 23, 23)' }}/>
-                            </a>
-                            <a title="White" className="icon-color-wrapper">
+                            <a title="White" className="icon-color-wrapper" onClick={handleSelected}>
                                 <div className="back" style={{ background: 'rgb(23, 23, 23)' }}/>
                             </a>
                         </div>
@@ -44,4 +47,5 @@ const PanelColorList = () => {
     )
 };
 
-export default PanelColorList
+
+export default connect(null, { setColor })(PanelColorList)

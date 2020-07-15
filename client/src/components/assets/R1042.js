@@ -36,6 +36,7 @@ class R1042 extends Component {
 
     render() {
         const { sleeves, collar, zips, hoodLine, body, hood, insideLine } = this.state;
+        const { selected, color } = this.props;
         return (
             <svg id="R1042_Fleece_Varsity_Jacket_Front_A" xmlns="http://www.w3.org/2000/svg"
                  xlinkHref="http://www.w3.org/1999/xlink" viewBox="0 0 2048 2048" width="800" height="600">
@@ -105,8 +106,9 @@ class R1042 extends Component {
                 </g>
                 <image className="background-product" width="2048" height="2048"
                        xlinkHref="https://media.reformclothing.com/design_lab/ysd-products/R1042_Fleece_Varsity_Jacket/R1042_Fleece_Varsity_Jacket_Front_A_2048.png"/>
-                <image className="background-product" width="2048" height="2048"
-                       xlinkHref="https://rendering.documents.cimpress.io/v1/dcl/preview?format=png&amp;width=2048&amp;instructions_uri=https%3A%2F%2Fuds.documents.cimpress.io%2Fv3%2Finstructions%3Apreview%3FdocumentUri%3DnVPLbtswEPyVgr20QGiRFMWHb6mBAAHSpnBStGiRAyWSFhG9QNFpHCP%252F3pUdA7HRQ1roQGl2uTu7M9qiBxfH0HdojtiMoDM03q%252FhfXH5GcvF7dcf6ucSQN93aemGfgypj5tvsYGUOqVhnGfZFBtntq%252FWrZveqtAO0Y3jLPTZA8ni4VpwYyaFLhRRClfSFphbr7Hi2mBeKc219nCW2bAumzDWzkLjQ1k036JxHb2p3Ijmv7YoWKBQ5rkQXEM5SjzmPjdYG8uwMNJIyXJpCIMinWkdZC8p4WxRuzEtw6pOEPgdbKohQjlpW%252Fiu3S4AQLEHQnLt0nkXXXfUWBmptdMEC2mBPbEeG5pL7Llg3nDKoBVcf7rsrHtEc3qGdkvY7XmLAEE5mQnBhCA610wySotdw82kg5jlRDAqi6KgTBAud6EDWVXMaDGhBadKSnHMHOpqroQSJCeEaK04xJ%252FP0PpIsyGGLs1Apr1SryU7Hjl7YJk3XbW5dY%252FTxqxJZhohRdONvo%252Ft9bCfCn3pOwcJbYixj6doDfI%252FgU9Mc96EVbdXFFVwuAhh8GAK1XGwDdY2013T9usJgSUmIHERXGMnChXU26eelzZ06%252Fji0wvThmba4%252FXgunc3wBMCVd%252F0EbC4Kj%252B8p3J6Pr7k34QncIfgYP0U%252B%252FudzHfPsLK0GSbbfO%252BjfXceE3q%252Bg%252Fld1UczDXfrqrqDqqup1ThZtt3hsOwXkzAilS1zi6UgDHMjHDYKTGI4kabMBSPlX9155fybzPkvXMCTRHEpsatoCX8KL7EuvMVGUwF0WKWcP%252BHyyVT3i4NCBzI5OyHD%252F4OM8s6VlOaYcicwp9Lg0psCK%252BMq7QvjS0ZPyFx2Y7DuKnShW72mU5zQKcjb6YDIfwA%253D&amp;scene=https://scene.products.cimpress.io/v1/scenes/50643389-e091-41bb-a23d-500a1310f9c4"/>
+                {/*<image className="background-product" width="2048" height="2048"*/}
+                {/*       xlinkHref="https://rendering.documents.cimpress.io/v1/dcl/preview?format=png&amp;width=2048&amp;instructions_uri=https%3A%2F%2Fuds.documents.cimpress.io%2Fv3%2Finstructions%3Apreview%3FdocumentUri%3DnVPLbtswEPyVgr20QGiRFMWHb6mBAAHSpnBStGiRAyWSFhG9QNFpHCP%252F3pUdA7HRQ1roQGl2uTu7M9qiBxfH0HdojtiMoDM03q%252FhfXH5GcvF7dcf6ucSQN93aemGfgypj5tvsYGUOqVhnGfZFBtntq%252FWrZveqtAO0Y3jLPTZA8ni4VpwYyaFLhRRClfSFphbr7Hi2mBeKc219nCW2bAumzDWzkLjQ1k036JxHb2p3Ijmv7YoWKBQ5rkQXEM5SjzmPjdYG8uwMNJIyXJpCIMinWkdZC8p4WxRuzEtw6pOEPgdbKohQjlpW%252Fiu3S4AQLEHQnLt0nkXXXfUWBmptdMEC2mBPbEeG5pL7Llg3nDKoBVcf7rsrHtEc3qGdkvY7XmLAEE5mQnBhCA610wySotdw82kg5jlRDAqi6KgTBAud6EDWVXMaDGhBadKSnHMHOpqroQSJCeEaK04xJ%252FP0PpIsyGGLs1Apr1SryU7Hjl7YJk3XbW5dY%252FTxqxJZhohRdONvo%252Ft9bCfCn3pOwcJbYixj6doDfI%252FgU9Mc96EVbdXFFVwuAhh8GAK1XGwDdY2013T9usJgSUmIHERXGMnChXU26eelzZ06%252Fji0wvThmba4%252FXgunc3wBMCVd%252F0EbC4Kj%252B8p3J6Pr7k34QncIfgYP0U%252B%252FudzHfPsLK0GSbbfO%252BjfXceE3q%252Bg%252Fld1UczDXfrqrqDqqup1ThZtt3hsOwXkzAilS1zi6UgDHMjHDYKTGI4kabMBSPlX9155fybzPkvXMCTRHEpsatoCX8KL7EuvMVGUwF0WKWcP%252BHyyVT3i4NCBzI5OyHD%252F4OM8s6VlOaYcicwp9Lg0psCK%252BMq7QvjS0ZPyFx2Y7DuKnShW72mU5zQKcjb6YDIfwA%253D&amp;scene=https://scene.products.cimpress.io/v1/scenes/50643389-e091-41bb-a23d-500a1310f9c4"/>*/}
+
             </svg>
         )
     }
