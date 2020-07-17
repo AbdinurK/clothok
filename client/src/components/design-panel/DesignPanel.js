@@ -1,30 +1,38 @@
 import React, { Component } from "react";
+import PanelElementList from "./Panel-Element-List";
 import color from "./assets/colours-active.svg"
 import angle from "./assets/angle-right-white.svg"
 import decoration from "./assets/decoration-active.svg"
-import cross from "./assets/cross.svg"
 import "./DesignPanel.css"
-import PanelColorList from "./Panel-Color-List";
-import PanelElementList from "./Panel-Element-List";
+import DecoratePanel from "./DecoratePanel";
+
 
 class DesignPanel extends Component {
 
     state = {
-        selected: false,
+        color: false,
+        design: false,
         element: ''
     };
 
     handleColorClick = () => {
         this.setState(state => ({
-            selected: !state.selected
+            color: !state.color
         }))
     };
+
+    handleDesignClick = () => {
+        this.setState(state => ({
+            design: !state.design
+        }))
+    };
+
 
 
     render() {
         return (
             <div className="panel">
-                <div id="entry-panel" className={this.state.selected ? 'selected' : ''}>
+                <div id="entry-panel" className={this.state.color ? 'selected' : ''}>
                     <div className="customize-categories">
                         <div className="color-customize">
                             <a onClick={this.handleColorClick}>
@@ -37,7 +45,7 @@ class DesignPanel extends Component {
                         </div>
                         <div className="divider"/>
                         <div className="decorate">
-                            <a>
+                            <a onClick={this.handleDesignClick}>
                                 <div className="icon-angle-wrapper">
                                     <img className="icon" src={decoration} alt="color"/>
                                     <img className="angle-icon" src={angle} alt="color"/>
@@ -48,8 +56,9 @@ class DesignPanel extends Component {
                     </div>
                     <button className="btn-reset">RESET</button>
                 </div>
+                <DecoratePanel selected={this.state.design}/>
                 <div className="color-customize-panel">
-                    <PanelElementList selected={this.state.selected}/>
+                    <PanelElementList selected={this.state.color}/>
                 </div>
             </div>
         )

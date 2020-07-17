@@ -9,7 +9,7 @@ export default function (state = initialState, action) {
     switch (action.type) {
         case SET_ELEMENT:
             return {
-                ...state,
+                selectedColor: '',
                 selectedElement: action.payload
             };
         case SET_COLOR:

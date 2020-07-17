@@ -1,20 +1,22 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
+import { Route, Switch } from "react-router-dom";
+import jwt_decode from "jwt-decode";
+import store from "./store/store";
+import setAuthToken from "./utils/setAuthToken";
+import { setCurrentUser, logoutUser } from "./store/actions/authActions"
 import LandingPage from "./components/pages/landing-page/LandingPage"
 import ProductsList from "./components/products-list/ProductsList";
 import DesignLab from "./components/design-lab/DesignLab";
 import ProductDetail from "./components/product-detail/ProductDetail"
-import { Route, Switch } from "react-router-dom";
+import Laboratory from "./components/design-lab/Laboratory";
+import DesignPanel from "./components/design-panel/DesignPanel";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Dashboard from "./components/Dashboard";
 import PrivateRoute from "./components/private-route/PrivateRoute";
-import jwt_decode from "jwt-decode";
-import setAuthToken from "./utils/setAuthToken";
-import { setCurrentUser, logoutUser } from "./store/actions/authActions"
-import store from "./store/store";
-import Laboratory from "./components/design-lab/Laboratory";
-import Configurator from "./components/configurator/Configurator";
-import DesignPanel from "./components/design-panel/DesignPanel";
+
+
+
 
 if (localStorage.jwtToken) {
     const token = localStorage.jwtToken;

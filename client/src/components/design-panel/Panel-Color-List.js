@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import {setColor} from "../../store/actions/designActions"
 import cross from "./assets/cross.svg";
@@ -8,10 +8,13 @@ const PanelColorList = (props) => {
     const handleSelected = e => {
         props.setColor(e.target.style.background)
     };
+    const handleClose = (e) => {
+
+    };
     return (
         <div className={ panelElementList ? "plain-color-list" : "none" }>
             <div className="close-panel">
-                <a>
+                <a onClick={handleClose}>
                     <img className="icon-close" src={cross} alt="cross"/>
                 </a>
             </div>
@@ -24,16 +27,7 @@ const PanelColorList = (props) => {
                                 <div className="back" style={{ background: 'purple' }}/>
                             </a>
                             <a title="White" className="icon-color-wrapper" onClick={handleSelected}>
-                                <div className="back" style={{ background: 'rgb(23, 23, 23)' }}/>
-                            </a>
-                            <a title="White" className="icon-color-wrapper" onClick={handleSelected}>
-                                <div className="back" style={{ background: 'rgb(23, 23, 23)' }}/>
-                            </a>
-                            <a title="White" className="icon-color-wrapper" onClick={handleSelected}>
-                                <div className="back" style={{ background: 'rgb(23, 23, 23)' }}/>
-                            </a>
-                            <a title="White" className="icon-color-wrapper" onClick={handleSelected}>
-                                <div className="back" style={{ background: 'rgb(23, 23, 23)' }}/>
+                                <div className="back" style={{ background: 'red' }}/>
                             </a>
                         </div>
                     </div>

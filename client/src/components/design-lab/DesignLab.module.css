@@ -14,3 +14,11 @@
 .buttons > div {
     margin: 20px;
 }
+.row-wrapper {
+    display: flex;
+    margin-top: 35px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
