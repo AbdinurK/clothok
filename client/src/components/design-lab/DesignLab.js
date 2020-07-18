@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import DesignNav from "../design-navigation/DesignNav";
+import DesignNav from "../layout/design-navigation/DesignNav";
 import Row from "../row/Row";
 import R1042 from "../assets/R1042";
 import DesignPanel from "../design-panel/DesignPanel";
