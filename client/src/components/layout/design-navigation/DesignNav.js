@@ -1,32 +1,46 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import styles from "./DesignNav.module.css"
-import undo from "./assets/undo 1.svg"
-import redo from "./assets/redo 1.svg"
+import undo from "./assets/undo-grey.svg"
+import redo from "./assets/redo-grey.svg"
+import logo from "./assets/logo-icon.svg"
+import left from "./assets/arrow-left.svg"
+import "./DesignNav.css"
 
 const DesignNav = () => {
     return (
-        <div className={styles.header}>
-            <div className={styles.leftArea}>
-                <div>
-                    <button className="button btnBack">
-                        <span className={styles.buttonIcon}>
-                            <img />
-                        </span>
-                        <span></span>
-                    </button>
+        <div className="container">
+            <div className="header">
+                <div className="leftArea">
+                    <div>
+                        <a href="/products" className="button secondary small btnBack">
+                            <span className="buttonIcon">
+                                <img src={left} alt="left"/>
+                            </span>
+                            <span>EXIT</span>
+                        </a>
+                    </div>
+                    <div className="actionGroup">
+                        <a><img className="undo" src={undo} alt="sorry"/></a>
+                        &nbsp;
+                        <a><img className="redo" src={redo} alt="sorry"/></a>
+                    </div>
                 </div>
-                <div className="actionGroup">
-                    <a><img src={undo} alt="sorry"/></a>
-                    <a><img src={redo} alt="sorry"/></a>
+                <div className="centerArea">
+                    <NavLink to="/products" className="logo">Clothok</NavLink>
                 </div>
-            </div>
-            <div className={styles.centerArea}>
-                <NavLink to="/" className={styles.logo}>Clothok</NavLink>
-            </div>
-            <div className={styles.rightArea}>
-                <NavLink to="/save">save design</NavLink>
-                <NavLink to="/order">Order</NavLink>
+                <div className="rightArea">
+                    <div className="actionGroup">
+                        <button className="button secondary btnSaveDesign">
+                            <span className="buttonIcon">
+                                <img src={logo} alt="logo"/>
+                            </span>
+                            <span>SAVE</span>
+                        </button>
+                        <button className="button primary btnSaveDesign">
+                            <span>ORDER</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     )

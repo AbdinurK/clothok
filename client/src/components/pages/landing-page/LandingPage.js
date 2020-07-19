@@ -1,97 +1,82 @@
-import React, {Component} from "react";
-import styles from "./LandingPage.module.css";
-import {NavLink} from "react-router-dom";
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import "./LandingPage.css";
 import user from "./assets/user.svg";
 import basket from "./assets/basket.svg";
+import arrow1 from "./assets/Arrow 1.svg"
 import design from "./assets/design.png"
 import Footer from "../../layout/footer/Footer";
 
 export default class LandingPage extends Component {
+
+    onScrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        });
+    };
+
     render() {
         return (
-            <div>
-                <div className={styles.background}>
-                    <nav>
-                        <div className={styles.navbar}>
-                            <NavLink to="/" className={styles.logo}>Clothok</NavLink>
-                            <ul className={styles.list}>
-                                <li><NavLink to="/products"><img src={user} alt="no"/></NavLink></li>
-                                <li><NavLink to="products"><img src={basket} alt="no"/></NavLink></li>
-                            </ul>
+            <main>
+                <section className="section">
+                    <div className="section__first">
+                        <div className="container">
+                            <nav className="navigation">
+                                <a href="#" className="brand-logo">Clothok</a>
+                                <ul className="nav-list">
+                                    <li>
+                                        <a href="/login">
+                                            <img src={user} alt='user icon'/>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/basket">
+                                            <img src={basket} alt='basket icon'/>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
-                    </nav>
-                    <section className={styles.container}>
-                        <h1 className={styles.banner}>Check out our stuff</h1>
-                        <NavLink to="/products" className={styles.shopBtn }>Shop</NavLink>
-                    </section>
-                </div>
-
-                <section className={styles.design}>
-                    <div className={styles.container}>
-                        <h1 className={styles.banner}>Design your stuff</h1>
-                        <NavLink to="/designLab" className={styles.tryBtn }>Try it</NavLink>
-                    </div>
-                    <div className={styles.man}>
-                        <img src={design} alt="no"/>
-                    </div>
-                </section>
-
-                <section className={styles.clients}>
-                    <div className={styles.container}>
-                        <div className={styles.clients__inner}>
-                            <h1 className={styles.banner}>Our clients</h1>
-                            <div className={styles.testimonials}>
-                                <div>
-                                    <img alt="sorry"/>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        A gravida a nibh tortor ante. Nunc, mattis tempor, in tellus.
-                                    </p>
-                                    <h4>
-                                        @Mike
-                                    </h4>
-                                </div>
-                                <div>
-                                    <img alt="sorry"/>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        A gravida a nibh tortor ante. Nunc, mattis tempor, in tellus.
-                                    </p>
-                                    <h4>
-                                        @Mike
-                                    </h4>
-                                </div>
-                                <div>
-                                    <img alt="sorry"/>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        A gravida a nibh tortor ante. Nunc, mattis tempor, in tellus.
-                                    </p>
-                                    <h4>
-                                        @Mike
-                                    </h4>
-                                </div>
-                        </div>
+                        <div className="section__info">
+                            <h1 className="section__title">Check out our stuff</h1>
+                            <Link to="/products" className="section__action">Shop</Link>
                         </div>
                     </div>
                 </section>
 
-                <section className={styles.about}>
-                    <div className={styles.space}>
-                        <h1 className={styles.banner}>About us</h1>
-                        <p className={styles.text}>
-                            <b>Clothok</b> is focused on advancing the culture of belonging, for your team as well as our own.
-                            With this in mind, we make it a priority to create the best possible work environment for
-                            our staff, as well as recognize the strides our team make together. The core concepts of
-                            autonomy, candid communication, extreme personal ownership, and transparency are integral
-                            to our organizational culture. We believe that by executing these concepts effectively and
-                            in tandem, we cultivate an environment in which creativity and original ideas are allowed
-                            to thrive.
-                        </p>
+                <section className="section">
+                    <div className="section__second">
+                        <div className="section__info">
+                            <h1 className="section__title">Design your stuff</h1>
+                            <Link to="/design-lab" className="section__action">Try it</Link>
+                        </div>
+                        <img src={design} className="design-img" alt="design-img"/>
                     </div>
                 </section>
-                <Footer/>
-            </div>
+
+                <section className="section">
+                    <div className="section__third">
+                        <div className="section__info">
+                            <h1 className="section__title">Our clients</h1>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="section">
+                    <div className="section__fourth">
+                        <div className="section__info">
+                            <h1 className="section__title">About us</h1>
+                        </div>
+                    </div>
+                </section>
+                 <Footer/>
+                 <button id="scrollToTop" onClick={this.onScrollToTop}>
+                     <span>Go up</span>
+                     <img src={arrow1} alt="arrow 1" className="arrow"/>
+                 </button>
+            </main>
         )
     }
 }
