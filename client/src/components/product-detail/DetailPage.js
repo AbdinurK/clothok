@@ -1,13 +1,20 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom"
 import styles from "./ProductDetail.module.css";
 
 const DetailPage = ({ product }) => {
-    const { image, title, price, delivery, description, code } = product;
+    const { images, title, price, delivery, description, code } = product;
+    const image = images.map(item => {
+        return (
+            <Fragment>
+                <img src={`${process.env.PUBLIC_URL}/${item}`} alt="Sorry" className={styles.product__image}/>
+            </Fragment>
+        )
+    });
     return (
         <div className={styles.product}>
             <section className={styles.container}>
-                <img src={`${process.env.PUBLIC_URL}/${image}`} alt="Sorry" className={styles.product__image}/>
+                { image }
                 <div className={styles.product__info}>
                     <h1 className={styles.product__title}>{ title }</h1>
                     <p className={styles.product__description}>Classic White</p>

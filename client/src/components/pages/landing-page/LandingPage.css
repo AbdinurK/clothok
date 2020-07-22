@@ -9,6 +9,7 @@
     position: relative;
     max-width: 1240px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 .section__info {
     max-width: 24rem;
@@ -47,11 +48,10 @@
 }
 .section__first .navigation .brand-logo {
     font-size: 30px;
+    font-weight: 900;
     text-decoration: none;
     color: #ffffff;
-    font-weight: bolder;
     text-transform: uppercase;
-    font-style: normal;
     font-family: Montserrat, sans-serif;
 }
 .section__first .navigation .nav-list {
@@ -72,7 +72,6 @@
 .section__second .design-img {
     position: absolute;
     right: 0;
-    width: 700px;
 }
 .section__second .section__action {
     border: 2px solid #000000;
@@ -143,8 +142,15 @@
         max-width: none;
     }
     .section__info {
+        left: 0;
+        right: 0;
+        top: 200px;
         max-width: none;
-        transform: translateX(-50%);
+        display: block;
+        text-align: center;
+    }
+    .design-img {
+        bottom: 0;
     }
     .section__title {
         font-size: 4rem;

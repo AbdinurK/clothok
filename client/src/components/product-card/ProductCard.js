@@ -4,11 +4,11 @@ import basket from "./assets/basket.svg";
 import "./ProductCard.css"
 
 const ProductCard = ({ product }) => {
-    const { _id, image, title, price } = product;
+    const { _id, images, title, price } = product;
     return (
         <div className="card">
             <div className="card__image">
-                <img src={image} alt="sorry"/>
+                <img src={images[1]} alt="sorry"/>
             </div>
             <div className="card__info">
                 <div className="card__content">
