@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom"
-import styles from "./ProductDetail.module.css";
+import styles from "./DetailPage.module.css";
 
 const DetailPage = ({ product }) => {
     const { images, title, price, delivery, description, code } = product;

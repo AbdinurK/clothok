@@ -50,11 +50,9 @@ class ProductsList extends Component {
                 return <ProductCard key={product._id} product={product}/>
             });
             productsContent = (
-                <div>
+                <div style={{ padding: '20px 50px' }}>
                     <main className={styles.main}>
-                        <section className={styles.cards}>
-                            { dataSource }
-                        </section>
+                        { dataSource }
                     </main>
                 </div>
             )

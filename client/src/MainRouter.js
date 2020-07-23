@@ -14,6 +14,8 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Dashboard from "./components/Dashboard";
 import PrivateRoute from "./components/private-route/PrivateRoute";
+import Size from "./components/size-panel/Size";
+import Gender from "./components/gender-panel/Gender";
 
 
 
@@ -42,7 +44,7 @@ class MainRouter extends Component {
                     <Route exact path="/design-lab" component={Laboratory}/>
                     <Route exact path="/register" component={Register}/>
                     <Route exact path="/login" component={Login} />
-                    <Route exact path="/configurator" component={DesignPanel} />
+                    <Route exact path="/configurator" component={Gender}/>
                     <PrivateRoute exact path="/dashboard" component={Dashboard} />
                 </Switch>
             </div>
