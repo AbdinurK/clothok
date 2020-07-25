@@ -45,10 +45,6 @@
     right: 20px;
     width: 30px;
 }
-.basket:hover {
-    transform: translateY(-7px);
-}
-
 @media only screen and (max-width: 1000px) {
     .card {
         grid-column-end: span 6;

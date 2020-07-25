@@ -1,74 +1,47 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Link } from "react-router-dom"
 import styles from "./DetailPage.module.css";
+import Size from "../size-panel/Size";
+
+const ActionButtons = (props) => {
+    return (
+        <div className={styles.action__button}>
+            <Link to={`/design-lab/${props.code}`}>Edit design</Link>
+            <Link to="/order">Order</Link>
+        </div>
+    )
+};
 
 const DetailPage = ({ product }) => {
     const { images, title, price, delivery, description, code } = product;
-    const image = images.map(item => {
+    const image = images.map((item, index) => {
         return (
-            <Fragment>
+            <div className={styles.container}  key={index}>
                 <img src={`${process.env.PUBLIC_URL}/${item}`} alt="Sorry" className={styles.product__image}/>
-            </Fragment>
+            </div>
         )
     });
     return (
         <div className={styles.product}>
-            <section className={styles.container}>
-                { image }
-                <div className={styles.product__info}>
+            <section className={styles.product__section}>
+                <div className={styles.product__images}>
+                    { image }
+                </div>
+                <div className={styles.product__details}>
                     <h1 className={styles.product__title}>{ title }</h1>
                     <p className={styles.product__description}>Classic White</p>
                     <p className={styles.product__price}>{ price } T</p>
-                    <p className={styles.size__text}>Choose size:</p>
-                    <select className={styles.box}>
-                        <option>XS</option>
-                        <option>S</option>
-                        <option>M</option>
-                        <option>L</option>
-                        <option>XL</option>
-                    </select>
-                    <div className={styles.product__quantity}>
-                        <p>Quantity:</p>
-                        <div className={styles.buttons}>
-                            <button>+</button>
-                            <div className={styles.count}>0</div>
-                            <button>-</button>
-                        </div>
+                    <div className={styles.product__text}>
+                        <p>Choose size:</p>
+                        <Size/>
                     </div>
-                    <span>Delivery week: </span>
-                    <span className={styles.product__delivery}>{ delivery } week</span>
-                    <div className={styles.action__button}>
-                        <Link to={`/design-lab/${code}`}>Edit design</Link>
-                        <Link to="/order">Order</Link>
+                    <div className={styles.product__delivery}>
+                        <span>Delivery week: </span>
+                        <span>{ delivery } week</span>
                     </div>
+                    <ActionButtons code={code}/>
                 </div>
             </section>
-            <div className={styles.product__information}>
-                <section className={styles.container}>
-                    <div className={styles.sections}>
-                        <div>
-                            <h2>Product Description</h2>
-                            { description}
-                        </div>
-                        <div>
-                            <h2>Size Guide</h2>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Sit sed sit eget velit vitae auctor lectus augue.
-                                Aliquet etiam orci, et et libero.
-                            </p>
-                        </div>
-                        <div>
-                            <h2>Care Information</h2>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Sit sed sit eget velit vitae auctor lectus augue.
-                                Aliquet etiam orci, et et libero.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-            </div>
         </div>
     )
 };
