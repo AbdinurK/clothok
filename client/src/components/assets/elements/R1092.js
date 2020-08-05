@@ -2,7 +2,7 @@ import React from "react";
 
 const R1092 = () => {
     return (
-        <svg id="R1092_Track_Jacket_Front_A" xmlns:xlink="http://www.w3.org/1999/xlink"
+        <svg id="R1092_Track_Jacket_Front_A" xlinkHref="http://www.w3.org/1999/xlink"
              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" width="2048" height="2048">
 
             <g id="custom-color-swatches">

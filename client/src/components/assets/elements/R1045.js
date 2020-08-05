@@ -3,7 +3,7 @@ import React from "react";
 const R1045 = () => {
     return (
         <svg id="R1045_Reversible_Zip_Hoodie_Front_A" xmlns="http://www.w3.org/2000/svg"
-             xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2048 2048" width="2048" height="2048">
+             xlinkHref="http://www.w3.org/1999/xlink" viewBox="0 0 2048 2048" width="2048" height="2048">
 
             <g id="custom-color-swatches">
                 <g id="Group_R1045_Hood_Fleece">

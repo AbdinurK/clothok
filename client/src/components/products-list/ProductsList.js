@@ -8,7 +8,6 @@ import { connect } from "react-redux"
 import PropTypes  from "prop-types";
 import styles from "./ProductsList.module.css"
 import Search from "../search/Search";
-import Gender from "../layout/UI/gender-panel/Gender";
 import Size from "../layout/UI/size-panel/Size";
 import Quantity from "../layout/UI/quantity-panel/Quantity";
 

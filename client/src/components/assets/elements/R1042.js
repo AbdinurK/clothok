@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 
 class R1042 extends Component {
 
@@ -21,6 +21,7 @@ class R1042 extends Component {
         console.log(selected, color)
         if (selected && color) {
             if (color !== prevProps.color) {
+                console.log(selected, color, 'Adi')
                 this.updateJacket(selected, color)
             }
         }

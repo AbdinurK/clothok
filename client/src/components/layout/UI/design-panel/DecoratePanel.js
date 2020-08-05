@@ -2,7 +2,6 @@ import React from "react";
 import cross from "../../../assets/images/cross.svg";
 
 const DecoratePanel = (props) => {
-    console.log(props.selected)
     return (
         <div id={props.selected ? 'decorate-panel' : 'none'}>
             <div className="decoration-positions design-panels">
