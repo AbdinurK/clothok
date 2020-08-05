@@ -260,7 +260,7 @@
     color: #666666;
 }
 .panel #decorate-panel .design-panels .design-panel__content .design-panel__item .icon-color-wrapper .back {
-    background: url("assets/decoration-add.svg");
+    background: url("../../../assets/images/decoration-add.svg");
 }
 #none {
     display: none;

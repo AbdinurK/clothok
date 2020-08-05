@@ -9,14 +9,11 @@ import ProductsList from "./components/products-list/ProductsList";
 import DesignLab from "./components/design-lab/DesignLab";
 import ProductDetail from "./components/product-detail/ProductDetail"
 import Laboratory from "./components/design-lab/Laboratory";
-import DesignPanel from "./components/design-panel/DesignPanel";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Dashboard from "./components/Dashboard";
-import PrivateRoute from "./components/private-route/PrivateRoute";
-import Size from "./components/size-panel/Size";
-import Gender from "./components/gender-panel/Gender";
-import Quantity from "./components/quantity-panel/Quantity";
+import PrivateRoute from "./components/hoc/PrivateRoute";
+import Quantity from "./components/layout/UI/quantity-panel/Quantity";
 
 
 

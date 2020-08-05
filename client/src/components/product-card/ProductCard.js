@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import basket from "./assets/Group 1.svg"
+import basket from "../assets/images/basket-black.svg"
 import "./ProductCard.css"
 
 const ProductCard = ({ product }) => {
@@ -8,7 +8,7 @@ const ProductCard = ({ product }) => {
     return (
         <div className="card">
             <div className="card__image">
-                <img src={images[1]} alt="sorry"/>
+                <img src={images[0]} alt="sorry"/>
             </div>
             <div className="card__info">
                 <div className="card__content">

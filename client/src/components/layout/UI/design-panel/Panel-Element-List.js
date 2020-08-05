@@ -1,8 +1,8 @@
 import React, { useState, Fragment } from "react";
 import { connect } from "react-redux";
-import { setElement } from "../../store/actions/designActions"
-import cross from "./assets/cross.svg";
-import angle from "./assets/angle-right-white.svg";
+import { setElement } from "../../../../store/actions/designActions"
+import cross from "../../../assets/images/cross.svg";
+import angle from "../../../assets/images/angle-right-white.svg";
 import PanelColorList from "./Panel-Color-List";
 
 const PanelElementList = (props) => {

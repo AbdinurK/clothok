@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Navbar from "../layout/navbar/Navigation";
 import {getProduct} from "../../store/actions/productActions";
-import Spinner from "../spinner/Spinner"
+import Spinner from "../layout/UI/spinner/Spinner"
 import Footer from "../layout/footer/Footer";
 import DetailPage from "./DetailPage";
 

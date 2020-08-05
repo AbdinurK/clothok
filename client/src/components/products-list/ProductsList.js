@@ -1,32 +1,33 @@
-import React, {Component} from "react";
-import { connect } from "react-redux"
-import PropTypes  from "prop-types";
+import React, { useEffect, useState } from "react";
 import Navbar from "../layout/navbar/Navigation";
 import Footer from "../layout/footer/Footer";
-import Spinner from "../spinner/Spinner"
+import Spinner from "../layout/UI/spinner/Spinner"
 import ProductCard from "../product-card/ProductCard";
 import { getProducts } from "../../store/actions/productActions";
+import { connect } from "react-redux"
+import PropTypes  from "prop-types";
 import styles from "./ProductsList.module.css"
+import Search from "../search/Search";
+import Gender from "../layout/UI/gender-panel/Gender";
+import Size from "../layout/UI/size-panel/Size";
+import Quantity from "../layout/UI/quantity-panel/Quantity";
 
-class ProductsList extends Component {
+const onMount = props => () => {
+    props.getProducts();
+};
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            term: '',
-            count: 1,
-        }
-    }
 
-    componentDidMount() {
-        this.props.getProducts();
-    }
+const ProductsList = (props) =>  {
 
-    onSearchChange = (term) => {
-        this.setState({ term })
+    useEffect(onMount(props), []);
+
+    const [term, setTerm] = useState('');
+
+    const onSearchChange = (term) => {
+        setTerm(term)
     };
 
-    search(items, term) {
+    function search(items, term) {
         if(term.length === 0) {
             return items
         }
@@ -35,37 +36,38 @@ class ProductsList extends Component {
         })
     }
 
-
-    render() {
-        const { products, loading } = this.props.product;
-        const { term } = this.state;
-        let productsContent;
-        if (loading) {
-            productsContent = <Spinner/>;
-        } else if (products === undefined || products === null  || Object.keys(products).length === 0) {
-            productsContent = <p>Null</p>
-        } else {
-            const data = this.search(products, term);
-            const dataSource = data.map(product => {
-                return <ProductCard key={product._id} product={product}/>
-            });
-            productsContent = (
-                <div style={{ padding: '20px 50px' }}>
-                    <main className={styles.main}>
-                        { dataSource }
-                    </main>
+    const { products, loading } = props.product;
+    let productsContent;
+    if (loading) {
+        productsContent = <Spinner/>;
+    }
+    if (products && products.length) {
+        const data = search(products, term);
+        const dataSource = data.map(product => {
+            return <ProductCard key={product._id} product={product}/>
+        });
+        productsContent = (
+            <div style={{ padding: '50px 50px' }} className={styles.list}>
+                <div className={styles.filters}>
+                    <Search onSearchChange={onSearchChange}/>
+                    <Size/>
+                    <Quantity/>
                 </div>
-            )
-        }
-        return (
-            <div className={styles.page}>
-                <Navbar/>
-                { productsContent }
-                <Footer/>
+                <main className={styles.main}>
+                    { dataSource }
+                </main>
             </div>
         )
     }
-}
+    return (
+        <div className={styles.page}>
+            <Navbar/>
+            { productsContent }
+            <Footer/>
+        </div>
+    )
+
+};
 
 ProductsList.propTypes = {
     getProducts: PropTypes.func.isRequired,

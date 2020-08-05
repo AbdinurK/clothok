@@ -16,7 +16,9 @@ class R1042 extends Component {
     }
 
     componentDidUpdate(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot: SS): void {
+
         const { selected, color } = this.props;
+        console.log(selected, color)
         if (selected && color) {
             if (color !== prevProps.color) {
                 this.updateJacket(selected, color)
@@ -29,6 +31,7 @@ class R1042 extends Component {
             [selected]: color
         })
     };
+
 
     render() {
         const { sleeves, pockets, body, rib, insidelining, buttons } = this.state;

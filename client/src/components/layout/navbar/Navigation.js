@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import user from "./assets/user.svg";
-import basket from "./assets/basket.svg";
+import user from "../../assets/images/user.svg";
+import basket from "../../assets/images/basket.svg";
 import styles from "./Navbar.module.css"
 
 class Header extends Component {

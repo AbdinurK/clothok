@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom"
 import styles from "./DetailPage.module.css";
-import Size from "../size-panel/Size";
+import Size from "../layout/UI/size-panel/Size";
 
 const ActionButtons = (props) => {
     return (
@@ -13,7 +13,7 @@ const ActionButtons = (props) => {
 };
 
 const DetailPage = ({ product }) => {
-    const { images, title, price, delivery, description, code } = product;
+    const { images, title, price, delivery, code } = product;
     const image = images.map((item, index) => {
         return (
             <div className={styles.container}  key={index}>

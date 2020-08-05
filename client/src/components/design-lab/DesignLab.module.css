@@ -1,20 +1,4 @@
-.icon {
-    background-color: white;
-    display: flex;
-    background-position: center;
-    background-repeat: no-repeat;
-    justify-content: space-between;
-    background-size: cover;
-    position: relative;
-}
-.buttons {
-    display: block;
-    max-width: 150px;
-}
-.buttons > div {
-    margin: 20px;
-}
-.row-wrapper {
+.rowWrapper {
     display: flex;
     margin-top: 35px;
     justify-content: center;

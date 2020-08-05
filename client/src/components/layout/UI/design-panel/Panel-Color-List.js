@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import {setColor} from "../../store/actions/designActions"
-import cross from "./assets/cross.svg";
+import {setColor} from "../../../../store/actions/designActions"
+import cross from "../../../assets/images/cross.svg";
 
 const PanelColorList = (props) => {
     const panelElementList = props.selected;

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import PanelElementList from "./Panel-Element-List";
-import color from "./assets/colours-active.svg"
-import angle from "./assets/angle-right-white.svg"
-import decoration from "./assets/decoration-active.svg"
+import color from "../../../assets/images/colours-active.svg"
+import angle from "../../../assets/images/angle-right-white.svg"
+import decoration from "../../../assets/images/decoration-active.svg"
 import "./DesignPanel.css"
 import DecoratePanel from "./DecoratePanel";
 

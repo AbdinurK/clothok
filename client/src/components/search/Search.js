@@ -1,30 +1,26 @@
-import React, { Component } from "react";
+import React, {useState} from "react";
 import styles from "./Search.module.css"
 
-class Search extends Component {
+const Search = (props) => {
 
-    state = {
-        term: ''
-    };
+    const [term, setTerm] = useState('');
 
-    onSearchChange = (e) => {
+    const onSearchChange = (e) => {
         const term = e.target.value;
-        this.setState({term});
-        this.props.onSearchChange(term)
+        setTerm(term);
+        props.onSearchChange(term)
     };
 
-    render() {
-        return (
-            <input
-                type="text"
-                className={styles.search}
-                placeholder="type to search"
-                value={this.state.term}
-                onChange={this.onSearchChange}
-            />
-        )
-    }
-}
+    return (
+        <input
+            type="text"
+            className={styles.search}
+            placeholder="search..."
+            value={term}
+            onChange={onSearchChange}
+        />
+    )
+};
 
 
 export default Search

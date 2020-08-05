@@ -1,9 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import undo from "./assets/undo-grey.svg"
-import redo from "./assets/redo-grey.svg"
-import logo from "./assets/logo-icon.svg"
-import left from "./assets/arrow-left.svg"
+import undo from "../../assets/images/undo-grey.svg"
+import redo from "../../assets/images/redo-grey.svg"
+import logo from "../../assets/images/logo-icon.svg"
+import left from "../../assets/images/arrow-left.svg"
 import "./DesignNav.css"
 
 const DesignNav = () => {
