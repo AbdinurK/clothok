@@ -42,8 +42,8 @@
 .basket {
     position: absolute;
     margin-left: 0;
-    top: 20px;
-    right: 20px;
+    bottom: 10px;
+    right: 10px;
     width: 30px;
 }
 @media only screen and (max-width: 1000px) {

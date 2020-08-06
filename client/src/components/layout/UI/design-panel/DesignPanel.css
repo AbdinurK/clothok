@@ -209,6 +209,9 @@
     overflow: hidden;
     position: relative;
 }
+.panel .icon-color-wrapper:hover {
+    cursor: pointer;
+}
 .panel .icon-color-wrapper .back {
     width: 100%;
     height: 100%;

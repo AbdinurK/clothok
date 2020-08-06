@@ -11,7 +11,7 @@ const PanelElementList = (props) => {
     const [selected, setSelected] = useState(false);
     const handleSelected = e => {
         setSelected(true);
-        props.setElement(e.target.textContent)
+        props.setElement(e.target.textContent.toLowerCase().trim())
     };
     return (
         <Fragment>

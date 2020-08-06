@@ -4,7 +4,7 @@ import React from "react";
 const R1071 = () => {
     return (
         <svg id="R1071_Hoodie_Front_A" xmlns="http://www.w3.org/2000/svg" xlinkHref="http://www.w3.org/1999/xlink"
-             viewBox="0 0 2048 2048" width="2048" height="2048">
+             viewBox="0 0 2048 2048" width="800" height="600">
 
             <g id="custom-color-swatches">
                 <g id="Group_R1071_Rib">
