@@ -51,11 +51,9 @@ const R1072 = () => {
                     <rect x="610.566" y="446.402" width="829.958" height="907.767" fill="none"/>
                 </g>
             </g>
-            <image className="background-product" width="2048" height="2048"
+            <image className="background-product" width="800" height="600"
                    xlinkHref="https://media.reformclothing.com/design_lab/ysd-products/R1072_Sweater_Fleece/R1072_Sweater_Fleece_Front_A_2048.png"/>
-            <image width="2048" height="2048" className="decoration__preview-image"
-                   xlinkHref="https://rendering.documents.cimpress.io/v1/dcl/preview?format=png&amp;width=2048&amp;instructions_uri=https%3A%2F%2Fuds.documents.cimpress.io%2Fv3%2Finstructions%3Apreview%3FdocumentUri%3DlZC9bsMgFIXfhTnEGOMYvKWRKnVohqgdqqoDvzFKbCzAqaIo797rtlnSqROXcw6HDy7oZGPyYUAtokuCFigdJpg3T8%252B4rLek2a7fQHRhyDs7huRziOfXeIRIl%252FOY2qKYvbQ0QU%252B9nSft%252BzHalJY%252BFCdSxNsxb1PRrETNCedYN6bGzDiBORMSM80FE8LBqopxUkefOmvg4lstai8oTdFJbRNq3y%252FIG0CAOKNNxXDDeYkZpwYLLUrsNFOVkrWgai4ZZG8hvStJQx8j4G6g0UZwPr3JHVgVJX0P%252B876fZdnof4RjNUhygwf9GJ1N4Rj2J%252FBTjNi%252F62j6%252BKXxjDnhGArzISGJ%252FGaYFESh5XlVlFAkqq6o3mQ%252BvAXhtzBsH%252FAfFyvXw%253D%253D&amp;scene=https://scene.products.cimpress.io/v1/scenes/ac1b23c4-549b-47f9-845e-7281ebf0a090"/>
-        </svg>
+           </svg>
     )
 };
 

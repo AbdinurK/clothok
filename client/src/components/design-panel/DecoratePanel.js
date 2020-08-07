@@ -1,12 +1,12 @@
 import React from "react";
-import cross from "../../../assets/images/cross.svg";
+import cross from "../assets/images/cross.svg";
 
 const DecoratePanel = (props) => {
     return (
         <div id={props.selected ? 'decorate-panel' : 'none'}>
             <div className="decoration-positions design-panels">
                 <div className="close-panel">
-                    <a><img className="icon-close" src={cross}/></a>
+                    <a><img className="icon-close" src={cross} alt="sorry"/></a>
                 </div>
                 <div className="design-panel__content">
                     <div id="scrollbar-1594910761981" className="scrollbar-container panel-scroll-container">

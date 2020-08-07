@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import PanelElementList from "./Panel-Element-List";
-import color from "../../../assets/images/colours-active.svg"
-import angle from "../../../assets/images/angle-right-white.svg"
-import decoration from "../../../assets/images/decoration-active.svg"
+import color from "../assets/images/colours-active.svg"
+import angle from "../assets/images/angle-right-white.svg"
+import decoration from "../assets/images/decoration-active.svg"
 import DecoratePanel from "./DecoratePanel";
 import "./DesignPanel.css"
 
@@ -11,14 +11,15 @@ const DesignPanel = () =>  {
 
     const [colorSelected, setColorSelected] = useState(false);
     const [designSelected, setDesignSelected] = useState(false);
-    const [element, setElement] = useState('');
 
     const handleColorClick = () => {
         setColorSelected(!colorSelected);
+        setDesignSelected(false);
     };
 
     const handleDesignClick = () => {
-        setDesignSelected(!designSelected)
+        setDesignSelected(!designSelected);
+        setColorSelected(false)
     };
 
     return (

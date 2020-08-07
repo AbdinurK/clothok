@@ -18,9 +18,12 @@ exports.getAllProducts = (req, res, next) => {
 };
 
 exports.createProduct = (req, res, next) => {
+
+
     const product = new Product({
         title: req.body.title,
         images: req.files.map(item => item.path),
+        elements: req.body.elements,
         code: req.body.code,
         description: req.body.description,
         delivery: req.body.delivery,
