@@ -7,6 +7,8 @@ const R1042 = (props) => {
     const { selected, color } = props;
     const { elements } = props.design;
     const [element, setElement] = useState(elements);
+    const [width, setWidth] = useState(800);
+    const [height, setHeight] = useState(600);
 
     useEffect(() => {
         setElement(elements)
@@ -14,7 +16,7 @@ const R1042 = (props) => {
 
     return (
         <svg id="R1042_Fleece_Varsity_Jacket_Front_A" xmlns="http://www.w3.org/2000/svg"
-             xlinkHref="http://www.w3.org/1999/xlink" viewBox="0 0 2048 2048" width="800" height="600">
+             xlinkHref="http://www.w3.org/1999/xlink" viewBox="0 0 2048 2048" width={props.width ? props.width : width} height={props.height ? props.height : height}>
 
             <g id="custom-color-swatches">
                 <g id="Group_R1042_Buttons">

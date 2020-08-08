@@ -7,7 +7,7 @@ import DecoratePanel from "./DecoratePanel";
 import "./DesignPanel.css"
 
 
-const DesignPanel = () =>  {
+const DesignPanel = (props) =>  {
 
     const [colorSelected, setColorSelected] = useState(false);
     const [designSelected, setDesignSelected] = useState(false);

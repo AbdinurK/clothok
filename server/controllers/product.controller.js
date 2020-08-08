@@ -23,7 +23,7 @@ exports.createProduct = (req, res, next) => {
     const product = new Product({
         title: req.body.title,
         images: req.files.map(item => item.path),
-        elements: req.body.elements,
+        elements: req.body.elements.split(", "),
         code: req.body.code,
         description: req.body.description,
         delivery: req.body.delivery,
@@ -43,6 +43,25 @@ exports.createProduct = (req, res, next) => {
 exports.getProduct = (req, res, next) => {
     const id = req.params.productId;
     Product.findById(id)
+        .exec()
+        .then(doc => {
+            console.log(doc);
+            if (doc) {
+                res.status(200).json(doc);
+            } else {
+                res.status(404).json({
+                    message: 'No valid id!'
+                })
+            }
+        })
+        .catch(err => {
+            res.status(500).json({ error: err });
+        });
+};
+
+exports.getProductByCode = (req, res, next) => {
+    const code = req.params.code;
+    Product.findOne({ code: code })
         .exec()
         .then(doc => {
             console.log(doc);

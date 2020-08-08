@@ -5,6 +5,9 @@ const initialState = {
     selectedColor: '',
     elements: {
         body: '#FFFFFF',
+        bodylower: '#FFFFFF',
+        pocketzips: '#FFFFFF',
+        bodyupper: '#FFFFFF',
         sleeves: '#FFFFFF',
         collar: '#FFFFFF',
         pockets: '#FFFFFF',

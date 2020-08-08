@@ -3,10 +3,10 @@ import { Link } from "react-router-dom"
 import styles from "./DetailPage.module.css";
 import Size from "../layout/UI/size-panel/Size";
 
-const ActionButtons = (props) => {
+const ActionButtons = ({ code }) => {
     return (
         <div className={styles.action__button}>
-            <Link to={`/design-lab/${props.code}`}>Edit design</Link>
+            <Link to={`/design-lab/${code}`}>Edit design</Link>
             <Link to="/order">Order</Link>
         </div>
     )

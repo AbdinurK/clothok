@@ -1,7 +1,8 @@
 import {
     GET_PRODUCTS,
     PRODUCTS_LOADING,
-    GET_PRODUCT
+    GET_PRODUCT,
+    GET_PRODUCT_BY_CODE
 } from "./types";
 import axios from "axios";
 
@@ -34,6 +35,7 @@ export const getProduct = id => dispatch => {
             })
         })
 };
+
 
 export const setProductsLoading = () => {
     return {
