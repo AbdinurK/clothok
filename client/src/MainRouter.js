@@ -13,7 +13,7 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Dashboard from "./components/Dashboard";
 import PrivateRoute from "./components/hoc/PrivateRoute";
-import Quantity from "./components/layout/UI/quantity-panel/Quantity";
+import DemoKeyboard from "./components/DemoKeyboard";
 
 
 
@@ -42,7 +42,7 @@ class MainRouter extends Component {
                     <Route exact path="/design-lab" component={Laboratory}/>
                     <Route exact path="/register" component={Register}/>
                     <Route exact path="/login" component={Login} />
-                    <Route exact path="/configurator" component={Quantity}/>
+                    <Route exact path="/configurator" component={DemoKeyboard}/>
                     <PrivateRoute exact path="/dashboard" component={Dashboard} />
                 </Switch>
             </div>

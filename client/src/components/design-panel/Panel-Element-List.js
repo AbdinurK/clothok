@@ -29,10 +29,10 @@ const PanelElementList = (props) => {
     function renderElements() {
         return elements.map((element, index) => (
             <Fragment key={index}>
-                <div id="a5i0K00000005CaQAI" className="section-group">
+                <div className="section-group">
                     <a>
                         <div className="svg-icon">
-                            <Product width="50" height="50"/>
+                            <Product width="50" height="50" bg={element.split(' ').join('').toLowerCase()}/>
                             <img className="angle-right hidden-tablet"
                                  src={angle} alt="angle"/>
                         </div>
