@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { setColor } from "../../store/actions/designActions"
-import cross from "../assets/images/cross.svg";
+import { setColor } from "../../../../store/actions/designActions"
+import "./Panel-Color-List.css"
+import cross from "../../../assets/images/cross.svg";
 
 const PanelColorList = (props) => {
     const [selected, setSelected] = useState(false);

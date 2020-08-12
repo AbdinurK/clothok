@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import PanelElementList from "./Panel-Element-List";
+import PanelElementList from "./ElementsPanel/Panel-Element-List";
 import color from "../assets/images/colours-active.svg"
 import angle from "../assets/images/angle-right-white.svg"
 import decoration from "../assets/images/decoration-active.svg"
-import DecoratePanel from "./DecoratePanel";
+import DecoratePanel from "./DecoratePanel/DecoratePanel";
 import "./DesignPanel.css"
 
 
@@ -49,9 +49,7 @@ const DesignPanel = (props) =>  {
                 <button className="btn-reset">RESET</button>
             </div>
             <DecoratePanel selected={designSelected}/>
-            <div className="color-customize-panel">
-                <PanelElementList selected={colorSelected}/>
-            </div>
+            <PanelElementList selected={colorSelected}/>
         </div>
     )
 

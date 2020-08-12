@@ -1,12 +1,13 @@
 import React, { useState, useEffect, Fragment, lazy } from "react";
 import { connect } from "react-redux";
-import { setElement } from "../../store/actions/designActions"
+import { setElement } from "../../../store/actions/designActions"
 import { withRouter } from "react-router-dom"
-import { components } from "../assets/service/components"
-import cross from "../assets/images/cross.svg";
-import angle from "../assets/images/angle-right-white.svg";
-import PanelColorList from "./Panel-Color-List";
-import {withDesignProps} from "../hoc/withDesignProps";
+import { components } from "../../assets/service/components"
+import cross from "../../assets/images/cross.svg";
+import angle from "../../assets/images/angle-right-white.svg";
+import PanelColorList from "./ColorsPanel/Panel-Color-List";
+import "./Panel-Element-List.css"
+import {withDesignProps} from "../../hoc/withDesignProps";
 
 const PanelElementList = (props) => {
     const code = props.match.params.id;
@@ -46,7 +47,7 @@ const PanelElementList = (props) => {
     }
 
     return (
-        <Fragment>
+        <div className="color-customize-panel">
             <div className={props.selected  ? "section-groups" : "none"}>
                 <div className="close-panel">
                     <a onClick={() => setSelected(false)}>
@@ -66,7 +67,7 @@ const PanelElementList = (props) => {
                 </div>
             </div>
             <PanelColorList selected={selected}/>
-        </Fragment>
+        </div>
     )
 };
 

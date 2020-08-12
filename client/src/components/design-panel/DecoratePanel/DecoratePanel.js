@@ -1,5 +1,7 @@
 import React from "react";
-import cross from "../assets/images/cross.svg";
+import "./DecoratePanel.css"
+import cross from "../../assets/images/cross.svg";
+import IconsPanel from "./IconsPanel/IconsPanel";
 
 const DecoratePanel = (props) => {
     return (
@@ -56,6 +58,7 @@ const DecoratePanel = (props) => {
                     </div>
                 </div>
             </div>
+            <IconsPanel/>
         </div>
     )
 };
