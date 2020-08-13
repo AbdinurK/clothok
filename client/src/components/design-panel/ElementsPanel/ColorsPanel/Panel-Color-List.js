@@ -1,18 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
-import { setColor } from "../../../../store/actions/designActions"
-import "./Panel-Color-List.css"
+import { setColor, panelElementsSelected } from "../../../../store/actions/designActions"
+import  "./Panel-Color-List.css"
 import cross from "../../../assets/images/cross.svg";
 
 const PanelColorList = (props) => {
-    const [selected, setSelected] = useState(false);
+    const { panelElementsSelected, panelEntrySelected } = props.design;
     const handleSelected = e => {
         props.setColor(e.target.style.background)
     };
-    const handleClose = (e) => {
-        setSelected(false)
+    const handleClose = () => {
+        props.panelElementsSelected(false)
     };
-
     const colors = [
         '#D1F2EB',
         '#BFC9CA',
@@ -33,8 +32,10 @@ const PanelColorList = (props) => {
         ))
     }
 
+
+
     return (
-        <div className={props.selected ? "plain-color-list" : "none" }>
+        <div className={panelEntrySelected && panelElementsSelected ? "plain-color-list" : 'none'}>
             <div className="close-panel">
                 <a onClick={handleClose}>
                     <img className="icon-close" src={cross} alt="cross"/>
@@ -42,7 +43,7 @@ const PanelColorList = (props) => {
             </div>
             <div className="panel-content">
                 <div className="title hidden-tablet">COLORS</div>
-                <div id="scrollbar-1594714212310" className="scrollbar-container panel-scroll-container">
+                <div className="scrollbar-container panel-scroll-container">
                     <div className="scrollable-content for-mac ">
                         <div className="color-list">
                             { renderColors() }
@@ -58,5 +59,9 @@ const PanelColorList = (props) => {
     )
 };
 
+const mapStateToProps = state => ({
+    design: state.designReducer
+});
 
-export default connect(null, { setColor })(PanelColorList)
+
+export default connect(mapStateToProps, { setColor, panelElementsSelected })(PanelColorList)

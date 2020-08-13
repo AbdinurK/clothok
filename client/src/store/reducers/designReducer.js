@@ -1,8 +1,22 @@
-import { GET_STATE, SET_COLOR, SET_ELEMENT } from "../actions/types";
+import {
+    GET_STATE,
+    SET_COLOR,
+    SET_ELEMENT,
+    SET_LOGO,
+    PANEL_ENTRY_SELECTED,
+    PANEL_DECORATE_SELECTED,
+    PANEL_ELEMENTS_SELECTED,
+    PANEL_SET_LOGO_SELECTED
+} from "../actions/types";
 
 const initialState = {
+    panelEntrySelected: false,
+    panelElementsSelected: false,
+    panelDecorateSelected: false,
+    panelSetLogo: false,
     selectedElement: '',
     selectedColor: '',
+    selectedLogo: '',
     elements: {
         body: '#FFFFFF',
         bodylower: '#FFFFFF',
@@ -18,6 +32,7 @@ const initialState = {
         rib: '#FFFFFF',
         zips: '#FFFFFF',
         tape: '#FFFFFF',
+        logo: ''
     }
 };
 
@@ -29,6 +44,12 @@ export default function (state = initialState, action) {
                 selectedColor: '',
                 selectedElement: action.payload
             };
+        case SET_LOGO:
+            return {
+                ...state,
+                selectedLogo: action.payload,
+                elements: {...state.elements, logo: action.payload}
+            }
         case SET_COLOR:
             return {
                 ...state,
@@ -37,6 +58,26 @@ export default function (state = initialState, action) {
             };
         case GET_STATE:
             return state;
+        case PANEL_ENTRY_SELECTED:
+            return {
+                ...state,
+                panelEntrySelected: action.payload
+            };
+        case PANEL_ELEMENTS_SELECTED:
+            return {
+                ...state,
+                panelElementsSelected: action.payload
+            };
+        case PANEL_DECORATE_SELECTED:
+            return {
+                ...state,
+                panelDecorateSelected: action.payload
+            };
+        case PANEL_SET_LOGO_SELECTED:
+            return {
+                ...state,
+                panelSetLogo: action.payload
+            };
         default:
             return state
     }

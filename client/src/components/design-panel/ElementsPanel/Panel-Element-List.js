@@ -1,6 +1,6 @@
-import React, { useState, useEffect, Fragment, lazy } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { connect } from "react-redux";
-import { setElement } from "../../../store/actions/designActions"
+import { setElement, panelElementsSelected, panelEntrySelected } from "../../../store/actions/designActions"
 import { withRouter } from "react-router-dom"
 import { components } from "../../assets/service/components"
 import cross from "../../assets/images/cross.svg";
@@ -13,6 +13,7 @@ const PanelElementList = (props) => {
     const code = props.match.params.id;
     const Product = withDesignProps(components[code]);
     const [data, setData] = useState({});
+    const { panelEntrySelected } = props.design;
     useEffect(() => {
         fetch(`http://localhost:5000/products/code/${code}`)
             .then(results => results.json())
@@ -20,10 +21,13 @@ const PanelElementList = (props) => {
                 setData(data);
             });
     }, []);
-    const [selected, setSelected] = useState(false);
+    let selected = false;
     const handleSelected = element => {
-        setSelected(true);
+        props.panelElementsSelected(!selected);
         props.setElement(element.split(' ').join('').toLowerCase())
+    };
+    const handleClose = () => {
+        props.panelEntrySelected(false)
     };
     const { elements } = data;
 
@@ -46,17 +50,19 @@ const PanelElementList = (props) => {
         ))
     }
 
+
+
     return (
         <div className="color-customize-panel">
-            <div className={props.selected  ? "section-groups" : "none"}>
+            <div className={panelEntrySelected ? "section-groups" : "none"}>
                 <div className="close-panel">
-                    <a onClick={() => setSelected(false)}>
+                    <a onClick={handleClose}>
                         <img className="icon-close" src={cross} alt="cross"/>
                     </a>
                 </div>
                 <div className="panel-content">
                     <div className="title hidden-tablet">ELEMENTS</div>
-                    <div id="scrollbar-1594145913798" className="scrollbar-container panel-scroll-container">
+                    <div className="scrollbar-container panel-scroll-container">
                         <div className="scrollable-content for-mac show-scrollbar">
                             { elements ? renderElements() : <p>loading...</p>}
                         </div>
@@ -66,10 +72,14 @@ const PanelElementList = (props) => {
                     </div>
                 </div>
             </div>
-            <PanelColorList selected={selected}/>
+            <PanelColorList/>
         </div>
     )
 };
 
+const mapStateToProps = state => ({
+    design: state.designReducer
+});
 
-export default connect(null, { setElement })(withRouter(PanelElementList))
+
+export default connect(mapStateToProps, { setElement, panelElementsSelected, panelEntrySelected })(withRouter(PanelElementList))

@@ -1,17 +1,26 @@
 import React from "react";
-import "./IconsPanel.css"
-import logo from "../../../assets/images/20.jpeg"
+import { connect } from "react-redux";
+import { setLogo, panelSetLogoSelected } from "../../../../store/actions/designActions"
 import cross from "../../../assets/images/cross.svg";
-import ad from "../../../assets/images/ad.jpeg"
-import adds from "../../../assets/images/2010.jpeg"
+import ld from "../../../assets/elements/2021.png"
+import lk from "../../../assets/elements/image.png"
+import "./IconsPanel.css"
 
 
-const IconsPanel = () => {
+const IconsPanel = (props) => {
+
+    const handleSelected = e => {
+        props.setLogo(e.target.src)
+    };
+    const { panelSetLogo } = props.design;
+    const handleClose = () => {
+        props.panelSetLogoSelected(false)
+    };
 
     return (
-        <div className="icon-panel">
+        <div className={panelSetLogo ? "icon-panel" : "none"}>
             <div className="close-panel">
-                <a>
+                <a onClick={handleClose}>
                     <img className="icon-close" src={cross} alt="cross"/>
                 </a>
             </div>
@@ -21,16 +30,10 @@ const IconsPanel = () => {
                     <div className="scrollable-content for-mac ">
                         <div className="logo-list">
                             <a className="icon-wrapper">
-                                <img src={logo} alt="image"/>
+                                <img src={lk} alt="image" onClick={handleSelected}/>
                             </a>
                             <a className="icon-wrapper">
-                                <img src={ad} alt="image"/>
-                            </a>
-                            <a className="icon-wrapper">
-                                <img src={adds} alt="image"/>
-                            </a>
-                            <a className="icon-wrapper">
-                                <img src={logo} alt="image"/>
+                                <img src={ld} alt="image" onClick={handleSelected}/>
                             </a>
                         </div>
                     </div>
@@ -44,5 +47,8 @@ const IconsPanel = () => {
     )
 };
 
+const mapStateToProps = state => ({
+    design: state.designReducer
+});
 
-export default IconsPanel
+export default connect(mapStateToProps, { setLogo, panelSetLogoSelected })(IconsPanel)

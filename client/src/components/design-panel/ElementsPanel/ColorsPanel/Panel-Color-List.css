@@ -3,6 +3,10 @@
     border: 1px solid #f1f1f2;
 }
 
+.close {
+    display: none;
+}
+
 .plain-color-list .panel-content {
     height: calc(100% - 44px);
     padding: 5px 10px 15px 10px;

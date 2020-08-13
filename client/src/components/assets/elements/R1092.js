@@ -1,15 +1,16 @@
 import React, {useEffect, useState} from "react";
 import {connect} from "react-redux";
 import {getState} from "../../../store/actions/designActions";
-import preview from "./2021.png"
 
 const R1092 = (props) => {
 
     const { selected, color, bg } = props;
-    const { elements } = props.design;
+    const { elements, selectedLogo } = props.design;
+
     const [element, setElement] = useState(elements);
     const [width, setWidth] = useState(800);
     const [height, setHeight] = useState(600);
+
 
     useEffect(() => {
         setElement(elements)
@@ -89,7 +90,7 @@ const R1092 = (props) => {
             </g>
             <image className="background-product" width="2048" height="2048"
                    xlinkHref="https://media.reformclothing.com/design_lab/ysd-products/R1092_Track_Jacket/R1092_Track_Jacket_Front_A_2048.png"/>
-            <image className="decoration__preview-image" xlinkHref={preview} alt="sorry" width="2048" height="2048"/>
+            <image className="decoration__preview-image" xlinkHref={element.logo} alt="sorry" width="2048" height="2048"/>
         </svg>
     )
 };

@@ -1,21 +1,35 @@
 import React from "react";
+import { panelSetLogoSelected, panelDecorateSelected } from "../../../store/actions/designActions"
+import { connect } from "react-redux";
 import "./DecoratePanel.css"
 import cross from "../../assets/images/cross.svg";
 import IconsPanel from "./IconsPanel/IconsPanel";
 
 const DecoratePanel = (props) => {
+
+    let selected = false;
+    const { panelDecorateSelected } = props.design;
+    const handleDecorate = () => {
+        props.panelSetLogoSelected(!selected);
+    };
+    const handleClose = () => {
+        props.panelDecorateSelected(false)
+    };
+
     return (
-        <div id={props.selected ? 'decorate-panel' : 'none'}>
+        <div id={panelDecorateSelected ? 'decorate-panel' : 'none'}>
             <div className="decoration-positions design-panels">
-                <div className="close-panel">
-                    <a><img className="icon-close" src={cross} alt="sorry"/></a>
+                <div className="close-panel" onClick={handleClose}>
+                    <a>
+                        <img className="icon-close" src={cross} alt="sorry"/>
+                    </a>
                 </div>
                 <div className="design-panel__content">
-                    <div id="scrollbar-1594910761981" className="scrollbar-container panel-scroll-container">
+                    <div className="scrollbar-container panel-scroll-container">
                         <div className="scrollable-content for-mac ">
                             <div className="position-panel-padding">
                                 <div className="decoration-position">
-                                    <a className="design-panel__item">
+                                    <a className="design-panel__item" onClick={handleDecorate}>
                                         <div className="icon-color-wrapper">
                                             <div className="back"/>
                                         </div>
@@ -24,7 +38,7 @@ const DecoratePanel = (props) => {
                                 </div>
                                 <div className="divider"/>
                                 <div className="decoration-position">
-                                    <a className="design-panel__item">
+                                    <a className="design-panel__item" onClick={handleDecorate}>
                                         <div className="icon-color-wrapper">
                                             <div className="back"/>
                                         </div>
@@ -33,7 +47,7 @@ const DecoratePanel = (props) => {
                                 </div>
                                 <div className="divider"/>
                                 <div className="decoration-position">
-                                    <a className="design-panel__item">
+                                    <a className="design-panel__item" onClick={handleDecorate}>
                                         <div className="icon-color-wrapper">
                                             <div className="back"/>
                                         </div>
@@ -41,7 +55,7 @@ const DecoratePanel = (props) => {
                                     </a>
                                 </div>
                                 <div className="divider"/>
-                                <div className="decoration-position">
+                                <div className="decoration-position" onClick={handleDecorate}>
                                     <a className="design-panel__item">
                                         <div className="icon-color-wrapper">
                                             <div className="back"/>
@@ -63,5 +77,9 @@ const DecoratePanel = (props) => {
     )
 };
 
+const mapStateToProps = state => ({
+    design: state.designReducer
+});
 
-export default DecoratePanel
+
+export default connect(mapStateToProps, { panelSetLogoSelected, panelDecorateSelected })(DecoratePanel)

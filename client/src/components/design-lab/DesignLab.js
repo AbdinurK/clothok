@@ -8,8 +8,6 @@ import { components } from "../assets/service/components"
 import classes from "./DesignLab.module.css"
 
 const DesignLab = (props) => {
-
-    console.log(props)
     const load = props.match.params.id;
 
     const { selectedColor, selectedElement } = props.design;

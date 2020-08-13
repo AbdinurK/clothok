@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { panelEntrySelected, panelDecorateSelected } from "../../store/actions/designActions"
 import PanelElementList from "./ElementsPanel/Panel-Element-List";
 import color from "../assets/images/colours-active.svg"
 import angle from "../assets/images/angle-right-white.svg"
@@ -9,22 +11,20 @@ import "./DesignPanel.css"
 
 const DesignPanel = (props) =>  {
 
-    const [colorSelected, setColorSelected] = useState(false);
-    const [designSelected, setDesignSelected] = useState(false);
+    let colorSelected, designSelected = false;
+    const { panelEntrySelected } = props.design;
 
     const handleColorClick = () => {
-        setColorSelected(!colorSelected);
-        setDesignSelected(false);
+        props.panelEntrySelected(!colorSelected)
     };
 
     const handleDesignClick = () => {
-        setDesignSelected(!designSelected);
-        setColorSelected(false)
+        props.panelDecorateSelected(!designSelected)
     };
 
     return (
         <div className="panel">
-            <div id="entry-panel" className={colorSelected ? 'selected' : ''}>
+            <div id="entry-panel" className={panelEntrySelected ? 'selected' : ''}>
                 <div className="customize-categories">
                     <div className="color-customize">
                         <a onClick={handleColorClick}>
@@ -48,11 +48,15 @@ const DesignPanel = (props) =>  {
                 </div>
                 <button className="btn-reset">RESET</button>
             </div>
-            <DecoratePanel selected={designSelected}/>
-            <PanelElementList selected={colorSelected}/>
+            <PanelElementList/>
+            <DecoratePanel/>
         </div>
     )
 
 };
 
-export default DesignPanel
+const mapStateToProps = state => ({
+    design: state.designReducer
+});
+
+export default connect(mapStateToProps, { panelEntrySelected, panelDecorateSelected })(DesignPanel)
