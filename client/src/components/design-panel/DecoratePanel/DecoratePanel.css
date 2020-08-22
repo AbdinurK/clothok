@@ -29,11 +29,15 @@
 }
 
 #decorate-panel .design-panels .design-panel__content .design-panel__item {
+    text-decoration: none;
     display: block;
     position: relative;
     padding-top: 5px;
     padding-bottom: 5px;
     color: #666666;
+}
+#decorate-panel .design-panels .design-panel__content .design-panel__item:hover {
+    color: blueviolet;
 }
 #decorate-panel .design-panels .design-panel__content .design-panel__item .icon-color-wrapper .back {
     background: url("../../assets/images/decoration-add.svg");

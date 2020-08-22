@@ -6,7 +6,8 @@ import {
     PANEL_ENTRY_SELECTED,
     PANEL_DECORATE_SELECTED,
     PANEL_ELEMENTS_SELECTED,
-    PANEL_SET_LOGO_SELECTED
+    PANEL_SET_LOGO_SELECTED,
+    RESET
 } from "../actions/types";
 
 const initialState = {
@@ -78,6 +79,8 @@ export default function (state = initialState, action) {
                 ...state,
                 panelSetLogo: action.payload
             };
+        case RESET:
+            return initialState;
         default:
             return state
     }

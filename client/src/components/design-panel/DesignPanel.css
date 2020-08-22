@@ -25,6 +25,8 @@
 }
 .panel #entry-panel .customize-categories a {
     cursor: pointer;
+    text-decoration: none;
+    color: #FFFFFF;
 }
 
 .panel #entry-panel .icon-angle-wrapper .icon {

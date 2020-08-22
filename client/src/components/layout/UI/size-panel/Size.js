@@ -15,7 +15,7 @@ const Size = (props) => {
     function renderSizes() {
         return array.map((item, index) => (
             <li onClick={onSelected} key={index} className={selected}>
-                <a href="#">{ item }</a>
+                <a href="/#">{ item }</a>
             </li>
         ))
     }

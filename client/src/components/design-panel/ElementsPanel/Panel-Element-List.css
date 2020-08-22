@@ -36,6 +36,10 @@
 .color-customize-panel .section-groups .section-group {
     position: relative;
 }
+.color-customize-panel .section-groups .section-group a {
+    text-decoration: none;
+    color: black;
+}
 
 .color-customize-panel .section-groups .section-group .angle-right {
     width: 21.74%;

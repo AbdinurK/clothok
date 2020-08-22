@@ -7,12 +7,13 @@ const R1042 = (props) => {
     const { selected, color, bg } = props;
     const { elements } = props.design;
     const [element, setElement] = useState(elements);
-    const [width, setWidth] = useState(800);
-    const [height, setHeight] = useState(600);
+    const width = 800;
+    const height = 600;
 
     useEffect(() => {
         setElement(elements)
-    }, [selected, color]);
+    }, [selected, color, elements]);
+
 
     return (
         <svg id="R1042_Fleece_Varsity_Jacket_Front_A" xmlns="http://www.w3.org/2000/svg"

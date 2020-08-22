@@ -5,7 +5,6 @@ import user from "./assets/user.svg";
 import basket from "./assets/basket.svg";
 import arrow1 from "./assets/Arrow 1.svg"
 import design from "./assets/design.png"
-import Footer from "../../layout/footer/Footer";
 
 export default class LandingPage extends Component {
 
@@ -24,7 +23,7 @@ export default class LandingPage extends Component {
                     <div className="section__first">
                         <div className="section__container">
                             <nav className="navigation">
-                                <a href="#" className="brand-logo">Clothok</a>
+                                <a href="/#" className="brand-logo">Clothok</a>
                                 <ul className="nav-list">
                                     <li>
                                         <a href="/login">
@@ -69,7 +68,7 @@ export default class LandingPage extends Component {
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. A gravida a nibh tortor
                                     ante. Nunc, mattis tempor, in tellus.
                                 </p>
-                                <a className="testimonial__link">@Mike</a>
+                                <a href="/#" className="testimonial__link">@Mike</a>
                             </div>
                             <div className="testimonial">
                                 <div className="testimonial__avatar">
@@ -79,7 +78,7 @@ export default class LandingPage extends Component {
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. A gravida a nibh tortor
                                     ante. Nunc, mattis tempor, in tellus.
                                 </p>
-                                <a className="testimonial__link">@Mike</a>
+                                <a href="/#" className="testimonial__link">@Mike</a>
                             </div>
                             <div className="testimonial">
                                 <div className="testimonial__avatar">
@@ -89,7 +88,7 @@ export default class LandingPage extends Component {
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. A gravida a nibh tortor
                                     ante. Nunc, mattis tempor, in tellus.
                                 </p>
-                                <a className="testimonial__link">@Mike</a>
+                                <a href="/#" className="testimonial__link">@Mike</a>
                             </div>
                         </div>
                     </div>

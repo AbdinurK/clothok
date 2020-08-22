@@ -1,8 +1,7 @@
 import {
     GET_PRODUCTS,
     PRODUCTS_LOADING,
-    GET_PRODUCT,
-    GET_PRODUCT_BY_CODE
+    GET_PRODUCT, GET_PRODUCT_BY_CODE
 } from "./types";
 import axios from "axios";
 
@@ -31,6 +30,24 @@ export const getProduct = id => dispatch => {
         .catch(err => {
             dispatch({
                 type: GET_PRODUCT,
+                payload: null
+            })
+        })
+};
+
+export const getProductByCode = code => dispatch => {
+    dispatch(setProductsLoading());
+    axios
+        .get(`/products/code/${code}`)
+        .then(res =>
+            dispatch({
+                type: GET_PRODUCT_BY_CODE,
+                payload: res.data
+            })
+        )
+        .catch(err => {
+            dispatch({
+                type: GET_PRODUCT_BY_CODE,
                 payload: null
             })
         })

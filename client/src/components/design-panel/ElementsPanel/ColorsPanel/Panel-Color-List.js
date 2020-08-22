@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { setColor, panelElementsSelected } from "../../../../store/actions/designActions"
 import  "./Panel-Color-List.css"
-import cross from "../../../assets/images/cross.svg";
+import ClosePanel from "../../../layout/UI/close-panel/ClosePanel";
 
 const PanelColorList = (props) => {
     const { panelElementsSelected, panelEntrySelected } = props.design;
@@ -26,7 +26,7 @@ const PanelColorList = (props) => {
 
     function renderColors() {
         return colors.map((color, index) => (
-            <a title="White" className="icon-color-wrapper" onClick={handleSelected} key={index}>
+            <a href="#something" title="White" className="icon-color-wrapper" onClick={handleSelected} key={index}>
                 <div className="back" style={{ background: `${color}` }}/>
             </a>
         ))
@@ -36,11 +36,7 @@ const PanelColorList = (props) => {
 
     return (
         <div className={panelEntrySelected && panelElementsSelected ? "plain-color-list" : 'none'}>
-            <div className="close-panel">
-                <a onClick={handleClose}>
-                    <img className="icon-close" src={cross} alt="cross"/>
-                </a>
-            </div>
+            <ClosePanel handleClose={handleClose}/>
             <div className="panel-content">
                 <div className="title hidden-tablet">COLORS</div>
                 <div className="scrollbar-container panel-scroll-container">

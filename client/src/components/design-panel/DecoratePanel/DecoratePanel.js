@@ -2,8 +2,8 @@ import React from "react";
 import { panelSetLogoSelected, panelDecorateSelected } from "../../../store/actions/designActions"
 import { connect } from "react-redux";
 import "./DecoratePanel.css"
-import cross from "../../assets/images/cross.svg";
 import IconsPanel from "./IconsPanel/IconsPanel";
+import ClosePanel from "../../layout/UI/close-panel/ClosePanel";
 
 const DecoratePanel = (props) => {
 
@@ -19,17 +19,13 @@ const DecoratePanel = (props) => {
     return (
         <div id={panelDecorateSelected ? 'decorate-panel' : 'none'}>
             <div className="decoration-positions design-panels">
-                <div className="close-panel" onClick={handleClose}>
-                    <a>
-                        <img className="icon-close" src={cross} alt="sorry"/>
-                    </a>
-                </div>
+                <ClosePanel handleClose={handleClose}/>
                 <div className="design-panel__content">
                     <div className="scrollbar-container panel-scroll-container">
                         <div className="scrollable-content for-mac ">
                             <div className="position-panel-padding">
                                 <div className="decoration-position">
-                                    <a className="design-panel__item" onClick={handleDecorate}>
+                                    <a href="#something" className="design-panel__item" onClick={handleDecorate}>
                                         <div className="icon-color-wrapper">
                                             <div className="back"/>
                                         </div>
@@ -38,7 +34,7 @@ const DecoratePanel = (props) => {
                                 </div>
                                 <div className="divider"/>
                                 <div className="decoration-position">
-                                    <a className="design-panel__item" onClick={handleDecorate}>
+                                    <a href="#something" className="design-panel__item" onClick={handleDecorate}>
                                         <div className="icon-color-wrapper">
                                             <div className="back"/>
                                         </div>
@@ -47,7 +43,7 @@ const DecoratePanel = (props) => {
                                 </div>
                                 <div className="divider"/>
                                 <div className="decoration-position">
-                                    <a className="design-panel__item" onClick={handleDecorate}>
+                                    <a href="#something" className="design-panel__item" onClick={handleDecorate}>
                                         <div className="icon-color-wrapper">
                                             <div className="back"/>
                                         </div>
@@ -56,7 +52,7 @@ const DecoratePanel = (props) => {
                                 </div>
                                 <div className="divider"/>
                                 <div className="decoration-position" onClick={handleDecorate}>
-                                    <a className="design-panel__item">
+                                    <a href="#something" className="design-panel__item">
                                         <div className="icon-color-wrapper">
                                             <div className="back"/>
                                         </div>

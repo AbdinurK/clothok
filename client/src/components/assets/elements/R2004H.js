@@ -11,7 +11,7 @@ const R2004H = (props) => {
 
     useEffect(() => {
         setElement(elements)
-    }, [selected, color]);
+    }, [selected, color, elements]);
 
     return (
         <svg id="R2004H_Rain_Jacket_Front_A" xmlns="http://www.w3.org/2000/svg"

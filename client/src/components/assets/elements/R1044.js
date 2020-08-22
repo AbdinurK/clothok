@@ -11,7 +11,7 @@ const R1044 = (props) => {
 
     useEffect(() => {
         setElement(elements)
-    }, [selected, color]);
+    }, [selected, color, elements]);
 
     return (
         <svg id="R1044_Reversible_Varsity_Jacket_Front_A" xmlns="http://www.w3.org/2000/svg"

@@ -12,17 +12,21 @@ const DesignNav = () => {
             <div className="header">
                 <div className="leftArea">
                     <div>
-                        <a href="/products" className="button secondary small btnBack">
+                        <NavLink to="/products" className="button secondary small btnBack">
                             <span className="buttonIcon">
                                 <img src={left} alt="left"/>
                             </span>
                             <span>EXIT</span>
-                        </a>
+                        </NavLink>
                     </div>
                     <div className="actionGroup">
-                        <a><img className="undo" src={undo} alt="sorry"/></a>
+                        <a href="/#">
+                            <img className="undo" src={undo} alt="sorry"/>
+                        </a>
                         &nbsp;
-                        <a><img className="redo" src={redo} alt="sorry"/></a>
+                        <a href="/#">
+                            <img className="redo" src={redo} alt="sorry"/>
+                        </a>
                     </div>
                 </div>
                 <div className="centerArea">

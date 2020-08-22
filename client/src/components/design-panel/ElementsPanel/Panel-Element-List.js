@@ -3,11 +3,16 @@ import { connect } from "react-redux";
 import { setElement, panelElementsSelected, panelEntrySelected } from "../../../store/actions/designActions"
 import { withRouter } from "react-router-dom"
 import { components } from "../../assets/service/components"
-import cross from "../../assets/images/cross.svg";
 import angle from "../../assets/images/angle-right-white.svg";
 import PanelColorList from "./ColorsPanel/Panel-Color-List";
 import "./Panel-Element-List.css"
 import {withDesignProps} from "../../hoc/withDesignProps";
+import ClosePanel from "../../layout/UI/close-panel/ClosePanel";
+
+// const onMount = props => () => {
+//     props.getProducts();
+// };
+
 
 const PanelElementList = (props) => {
     const code = props.match.params.id;
@@ -20,7 +25,7 @@ const PanelElementList = (props) => {
             .then(data => {
                 setData(data);
             });
-    }, []);
+    }, [code]);
     let selected = false;
     const handleSelected = element => {
         props.panelElementsSelected(!selected);
@@ -35,7 +40,7 @@ const PanelElementList = (props) => {
         return elements.map((element, index) => (
             <Fragment key={index}>
                 <div className="section-group">
-                    <a>
+                    <a href="#something">
                         <div className="svg-icon">
                             <Product width="50" height="50" bg={element.split(' ').join('').toLowerCase()}/>
                             <img className="angle-right hidden-tablet"
@@ -55,11 +60,7 @@ const PanelElementList = (props) => {
     return (
         <div className="color-customize-panel">
             <div className={panelEntrySelected ? "section-groups" : "none"}>
-                <div className="close-panel">
-                    <a onClick={handleClose}>
-                        <img className="icon-close" src={cross} alt="cross"/>
-                    </a>
-                </div>
+                <ClosePanel handleClose={handleClose}/>
                 <div className="panel-content">
                     <div className="title hidden-tablet">ELEMENTS</div>
                     <div className="scrollbar-container panel-scroll-container">

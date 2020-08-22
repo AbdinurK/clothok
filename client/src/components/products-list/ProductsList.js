@@ -7,6 +7,9 @@ import { getProducts } from "../../store/actions/productActions";
 import { connect } from "react-redux"
 import PropTypes  from "prop-types";
 import styles from "./ProductsList.module.css"
+import Search from "../search/Search";
+import Size from "../layout/UI/size-panel/Size";
+import Quantity from "../layout/UI/quantity-panel/Quantity";
 
 
 const onMount = props => () => {
@@ -45,11 +48,11 @@ const ProductsList = (props) =>  {
         });
         productsContent = (
             <div style={{ padding: '50px 50px' }} className={styles.list}>
-                {/*<div className={styles.filters}>*/}
-                {/*    <Search onSearchChange={onSearchChange}/>*/}
-                {/*    <Size/>*/}
-                {/*    <Quantity/>*/}
-                {/*</div>*/}
+                <div className={styles.filters}>
+                    <Search onSearchChange={onSearchChange}/>
+                    <Size/>
+                    <Quantity/>
+                </div>
                 <main className={styles.main}>
                     { dataSource }
                 </main>

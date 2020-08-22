@@ -10,7 +10,7 @@ const C1071 = (props) => {
 
     useEffect(() => {
         setElement(elements)
-    }, [selected, color]);
+    }, [selected, color, elements]);
 
     return (
         <svg id="C1071_Lightweight_Hoodie_Front_A" xmlns="http://www.w3.org/2000/svg"

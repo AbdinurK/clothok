@@ -11,7 +11,7 @@ const C1005 = (props) => {
 
     useEffect(() => {
        setElement(elements)
-    }, [selected, color]);
+    }, [selected, color, elements]);
 
 
     return (

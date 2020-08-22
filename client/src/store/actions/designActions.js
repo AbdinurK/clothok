@@ -6,7 +6,8 @@ import {
     PANEL_ENTRY_SELECTED,
     PANEL_ELEMENTS_SELECTED,
     PANEL_DECORATE_SELECTED,
-    PANEL_SET_LOGO_SELECTED
+    PANEL_SET_LOGO_SELECTED,
+    RESET
 } from "./types";
 
 export const setElement = (element) => {
@@ -60,5 +61,12 @@ export const panelSetLogoSelected = (selected) => {
     return {
         type: PANEL_SET_LOGO_SELECTED,
         payload: selected
+    }
+};
+
+export const reset = () => {
+    return {
+        type: RESET,
+        payload: null
     }
 };
