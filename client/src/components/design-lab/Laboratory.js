@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import DesignNav from "../layout/lab-navigation/DesignNav";
+import DesignNav from "../layout/DesignNav";
 
 const Laboratory = () => {
     return (

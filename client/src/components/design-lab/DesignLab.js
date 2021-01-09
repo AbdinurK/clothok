@@ -1,5 +1,5 @@
 import React from "react";
-import DesignNav from "../layout/lab-navigation/DesignNav";
+import DesignNav from "../layout/DesignNav";
 import DesignPanel from "../design-panel/DesignPanel";
 import { connect } from 'react-redux';
 import { withDesignProps } from "../hoc/withDesignProps"

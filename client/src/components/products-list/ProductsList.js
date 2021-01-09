@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../layout/navbar/Navigation";
-import Footer from "../layout/footer/Footer";
+import Navbar from "../layout/Navigation";
+import Footer from "../layout/Footer";
 import Spinner from "../layout/UI/spinner/Spinner"
 import ProductCard from "../product-card/ProductCard";
 import { getProducts } from "../../store/actions/productActions";
