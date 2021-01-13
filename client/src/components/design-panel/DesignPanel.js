@@ -6,9 +6,77 @@ import color from "../assets/images/colours-active.svg"
 import angle from "../assets/images/angle-right-white.svg"
 import decoration from "../assets/images/decoration-active.svg"
 import DecoratePanel from "./DecoratePanel/DecoratePanel";
+import styled from 'styled-components'
 import "./DesignPanel.css"
 
-
+const Panel = styled.div`
+    position: absolute;
+    top: 200px;
+    left: 32px;
+    display: flex;
+    z-index: 103;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-family: 'LabGrotesque-Black', sans-serif;
+`
+const EntryPanel = styled.div`
+    width: 90px;
+    height: 210px;
+    padding: 15px 10px;
+    color: #b3b3b3;
+    background-color: #000000;
+    text-align: center;
+    border-radius: 6px;
+`
+const Categories = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    a {
+        cursor: pointer;
+        text-decoration: none;
+        color: #FFFFFF;
+    }
+`
+const CategoryName = styled.div`
+    font-family: 'LabGrotesque-Black', sans-serif;
+`
+const Icon = styled.div`
+    .icon {
+        width: 40px;
+        height: 40px;
+        margin-left: 15px;
+        vertical-align: middle;
+    }
+    
+    .angle-icon {
+        width: 15px;
+        vertical-align: middle;
+    }
+`
+const Divider = styled.div`
+    width: 30px;
+    height: 1px;
+    margin: 10px auto;
+    background-color: #f1f1f2;
+`
+const ResetButton = styled.button`
+    width: 100%;
+    height: 36px;
+    border: 1px solid #262626;
+    margin-top: 20px;
+    border-radius: 2px;
+    background: none;
+    color: #ffffff;
+    outline: none;
+    transition: border ease-in-out 0.3s;
+    
+    :hover {
+        border-color: #ffffff;
+    }
+`
 
 const DesignPanel = (props) =>  {
 
@@ -30,34 +98,34 @@ const DesignPanel = (props) =>  {
     };
 
     return (
-        <div className="panel">
-            <div id="entry-panel" className={panelEntrySelected || panelDecorateSelected ? 'selected' : ''}>
-                <div className="customize-categories">
-                    <div className="color-customize">
+        <Panel>
+            <EntryPanel>
+                <Categories>
+                    <div>
                         <a href="#something" onClick={handleColorClick}>
-                            <div className="icon-angle-wrapper">
+                            <Icon>
                                 <img className="icon" src={color} alt="color"/>
                                 <img className="angle-icon" src={angle} alt="color"/>
-                            </div>
-                            <div className="category-name">COLOR</div>
+                            </Icon>
+                            <CategoryName>COLOR</CategoryName>
                         </a>
                     </div>
-                    <div className="divider"/>
-                    <div className="decorate">
+                    <Divider/>
+                    <div>
                         <a href="#something" onClick={handleDesignClick}>
-                            <div className="icon-angle-wrapper">
+                            <Icon>
                                 <img className="icon" src={decoration} alt="color"/>
                                 <img className="angle-icon" src={angle} alt="color"/>
-                            </div>
-                            <div className="category-name">DESIGNS</div>
+                            </Icon>
+                            <CategoryName>DESIGNS</CategoryName>
                         </a>
                     </div>
-                </div>
-                <button className="btn-reset" onClick={handleReset}>RESET</button>
-            </div>
+                </Categories>
+                <ResetButton onClick={handleReset}>RESET</ResetButton>
+            </EntryPanel>
             <PanelElementList/>
             <DecoratePanel/>
-        </div>
+        </Panel>
     )
 
 };

@@ -4,15 +4,53 @@ import { setElement, panelElementsSelected, panelEntrySelected } from "../../../
 import { withRouter } from "react-router-dom"
 import { components } from "../../assets/service/components"
 import angle from "../../assets/images/angle-right-white.svg";
-import PanelColorList from "./ColorsPanel/Panel-Color-List";
-import "./Panel-Element-List.css"
-import {withDesignProps} from "../../hoc/withDesignProps";
+import PanelColorList from "./Panel-Color-List";
+import { PanelContent, Title } from '../UI'
+import { withDesignProps } from "../../hoc/withDesignProps";
 import ClosePanel from "../../layout/UI/close-panel/ClosePanel";
+import styled from 'styled-components'
+import "./Panel-Element-List.css"
 
-// const onMount = props => () => {
-//     props.getProducts();
-// };
 
+const ColorCustomizePanel = styled.div`
+    height: calc((100vh - 100px) * 0.8);
+    display: flex;
+    border-radius: 0 6px 6px 6px;
+    color: #808080;
+    background-color: #ffffff;
+`
+const SectionGroups = styled.div`
+    width: 130px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid #f1f1f2;
+`
+const Section = styled.div`
+    position: relative;
+    
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    .angle-right {
+        width: 21.74%;
+        display: inline-block;
+        vertical-align: middle;
+        user-select: none;
+    }
+`
+const SectionName = styled.div`
+    width: calc(100% - 4px * 2);
+    cursor: pointer;
+    margin: 8px auto 0 auto;
+    
+    :hover {
+        color: blueviolet;
+    }
+`
 
 const PanelElementList = (props) => {
     const code = props.match.params.id;
@@ -39,17 +77,16 @@ const PanelElementList = (props) => {
     function renderElements() {
         return elements.map((element, index) => (
             <Fragment key={index}>
-                <div className="section-group">
+                <Section>
                     <a href="#something">
                         <div className="svg-icon">
                             <Product width="50" height="50" bg={element.split(' ').join('').toLowerCase()}/>
-                            <img className="angle-right hidden-tablet"
+                            <img className="angle-right"
                                  src={angle} alt="angle"/>
                         </div>
-                        <div className="section-group-name" onClick={() => handleSelected(element)}>{element}
-                        </div>
+                        <SectionName onClick={() => handleSelected(element)}>{element}</SectionName>
                     </a>
-                </div>
+                </Section>
                 <div className="divider"/>
             </Fragment>
         ))
@@ -58,23 +95,27 @@ const PanelElementList = (props) => {
 
 
     return (
-        <div className="color-customize-panel">
-            <div className={panelEntrySelected ? "section-groups" : "none"}>
-                <ClosePanel handleClose={handleClose}/>
-                <div className="panel-content">
-                    <div className="title hidden-tablet">ELEMENTS</div>
-                    <div className="scrollbar-container panel-scroll-container">
-                        <div className="scrollable-content for-mac show-scrollbar">
-                            { elements ? renderElements() : <p>loading...</p>}
-                        </div>
-                        <div className="scrollbar-track vertical ">
-                            <div className="scrollbar-thumb"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <ColorCustomizePanel>
+            {
+                panelEntrySelected ? (
+                    <SectionGroups>
+                        <ClosePanel handleClose={handleClose}/>
+                        <PanelContent>
+                            <Title>ELEMENTS</Title>
+                            <div className="scrollbar-container panel-scroll-container">
+                                <div className="scrollable-content for-mac show-scrollbar">
+                                    { elements ? renderElements() : <p>loading...</p>}
+                                </div>
+                                <div className="scrollbar-track vertical ">
+                                    <div className="scrollbar-thumb"/>
+                                </div>
+                            </div>
+                        </PanelContent>
+                    </SectionGroups>
+                ) : null
+            }
             <PanelColorList/>
-        </div>
+        </ColorCustomizePanel>
     )
 };
 
@@ -83,4 +124,7 @@ const mapStateToProps = state => ({
 });
 
 
-export default connect(mapStateToProps, { setElement, panelElementsSelected, panelEntrySelected })(withRouter(PanelElementList))
+export default connect(
+    mapStateToProps,
+    { setElement, panelElementsSelected, panelEntrySelected }
+    )(withRouter(PanelElementList))
