@@ -1,6 +1,6 @@
 import React from "react";
 import DesignNav from "../layout/DesignNav";
-import DesignPanel from "../design-panel/DesignPanel";
+import DesignPanel from "../DesignPanel/DesignPanel";
 import { connect } from 'react-redux';
 import { withDesignProps } from "../hoc/withDesignProps"
 import { getState } from "../../store/actions/designActions"

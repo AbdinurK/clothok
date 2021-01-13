@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { panelEntrySelected, panelDecorateSelected, reset } from "../../store/actions/designActions"
 import PanelElementList from "./ElementsPanel/Panel-Element-List";
@@ -6,8 +6,8 @@ import color from "../assets/images/colours-active.svg"
 import angle from "../assets/images/angle-right-white.svg"
 import decoration from "../assets/images/decoration-active.svg"
 import DecoratePanel from "./DecoratePanel/DecoratePanel";
-import styled from 'styled-components'
-import "./DesignPanel.css"
+import styled, { css } from 'styled-components'
+
 
 const Panel = styled.div`
     position: absolute;
@@ -27,6 +27,11 @@ const EntryPanel = styled.div`
     background-color: #000000;
     text-align: center;
     border-radius: 6px;
+    
+    ${props => props.selected && css`
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+  `}
 `
 const Categories = styled.div`
     display: flex;
@@ -80,15 +85,18 @@ const ResetButton = styled.button`
 
 const DesignPanel = (props) =>  {
 
+    const [selected, setSelected] = useState(false)
     let colorSelected, designSelected = false;
     const { panelEntrySelected, panelDecorateSelected } = props.design;
 
     const handleColorClick = () => {
+        setSelected(true)
         props.panelEntrySelected(!colorSelected)
         props.panelDecorateSelected(false);
     };
 
     const handleDesignClick = () => {
+        setSelected(true)
         props.panelDecorateSelected(!designSelected);
         props.panelEntrySelected(false);
     };
@@ -99,7 +107,7 @@ const DesignPanel = (props) =>  {
 
     return (
         <Panel>
-            <EntryPanel>
+            <EntryPanel selected={selected}>
                 <Categories>
                     <div>
                         <a href="#something" onClick={handleColorClick}>
@@ -124,7 +132,7 @@ const DesignPanel = (props) =>  {
                 <ResetButton onClick={handleReset}>RESET</ResetButton>
             </EntryPanel>
             <PanelElementList/>
-            <DecoratePanel/>
+            {/*<DecoratePanel/>*/}
         </Panel>
     )
 

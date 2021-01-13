@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { setColor, panelElementsSelected } from "../../../store/actions/designActions"
 import ClosePanel from "../../layout/UI/close-panel/ClosePanel";
@@ -43,6 +43,7 @@ const Color = styled.div`
 `
 
 const PanelColorList = (props) => {
+    const [selected, setSelected] = useState(false)
     const { panelElementsSelected, panelEntrySelected } = props.design;
     const handleSelected = e => {
         props.setColor(e.target.style.background)
@@ -98,8 +99,4 @@ const mapStateToProps = state => ({
     design: state.designReducer
 });
 
-
-export default connect(
-    mapStateToProps,
-    { setColor, panelElementsSelected }
-    )(PanelColorList)
+export default connect(mapStateToProps, { setColor, panelElementsSelected })(PanelColorList)

@@ -5,11 +5,10 @@ import { withRouter } from "react-router-dom"
 import { components } from "../../assets/service/components"
 import angle from "../../assets/images/angle-right-white.svg";
 import PanelColorList from "./Panel-Color-List";
-import { PanelContent, Title } from '../UI'
+import { PanelContent, Title, Divider } from '../UI'
 import { withDesignProps } from "../../hoc/withDesignProps";
 import ClosePanel from "../../layout/UI/close-panel/ClosePanel";
 import styled from 'styled-components'
-import "./Panel-Element-List.css"
 
 
 const ColorCustomizePanel = styled.div`
@@ -40,6 +39,19 @@ const Section = styled.div`
         display: inline-block;
         vertical-align: middle;
         user-select: none;
+    }
+    
+    .svg-icon {
+        width: calc(100% - 4px * 2);
+        height: 52px;
+        margin: auto;
+    }
+    
+    .svg-icon svg {
+        width: 56.52%;
+        margin-left: 21.74%;
+        display: inline-block;
+        vertical-align: middle;
     }
 `
 const SectionName = styled.div`
@@ -87,7 +99,7 @@ const PanelElementList = (props) => {
                         <SectionName onClick={() => handleSelected(element)}>{element}</SectionName>
                     </a>
                 </Section>
-                <div className="divider"/>
+                <Divider/>
             </Fragment>
         ))
     }

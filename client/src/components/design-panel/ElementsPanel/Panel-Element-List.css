@@ -1,9 +1,0 @@
-
-
-.color-customize-panel .section-pattern-list .panel-scroll-container {
-    max-height: calc(100% - 46px);
-}
-
-.color-customize-panel .section-options .panel-scroll-container .scrollable-content.show-scrollbar {
-    padding-right: 10px;
-}
