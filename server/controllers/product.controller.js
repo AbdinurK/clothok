@@ -45,7 +45,6 @@ exports.getProduct = (req, res, next) => {
     Product.findById(id)
         .exec()
         .then(doc => {
-            console.log(doc);
             if (doc) {
                 res.status(200).json(doc);
             } else {
@@ -64,7 +63,6 @@ exports.getProductByCode = (req, res, next) => {
     Product.findOne({ code: code })
         .exec()
         .then(doc => {
-            console.log(doc);
             if (doc) {
                 res.status(200).json(doc);
             } else {

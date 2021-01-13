@@ -6,9 +6,9 @@ import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./store/actions/authActions"
 import LandingPage from "./components/pages/landing-page/LandingPage"
 import ProductsList from "./components/products-list/ProductsList";
-import DesignLab from "./components/design-lab/DesignLab";
+import DesignLab from "./components/DesignLab/DesignLab";
 import ProductDetail from "./components/product-detail/ProductDetail"
-import Laboratory from "./components/design-lab/Laboratory";
+import Laboratory from "./components/DesignLab/Laboratory";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Dashboard from "./components/Dashboard";

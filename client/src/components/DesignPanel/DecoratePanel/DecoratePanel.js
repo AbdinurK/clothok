@@ -1,9 +1,56 @@
 import React from "react";
 import { panelSetLogoSelected, panelDecorateSelected } from "../../../store/actions/designActions"
 import { connect } from "react-redux";
-import "./DecoratePanel.css"
-import IconsPanel from "./IconsPanel/IconsPanel";
+import IconsPanel from "./IconsPanel";
+import { Divider } from '../UI'
 import ClosePanel from "../../layout/UI/close-panel/ClosePanel";
+import styled from 'styled-components'
+
+
+const StyledDecoratePanel = styled.div`
+    height: calc((100vh - 100px) * 0.8);
+    display: flex;
+    border-radius: 0 6px 6px 6px;
+    background-color: #ffffff;
+    font-size: 10px;
+    border: 1px solid #f1f1f2;
+`
+const DesignPanel = styled.div`
+    width: 130px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+    vertical-align: top;
+    text-transform: uppercase;
+    overflow: hidden;
+    background-color: white;
+`
+const DesignPanelContent = styled.div`
+    height: calc(100% - 46px);
+    position: relative;
+    
+    .position-panel-padding {
+        padding: 15px 15px 10px 15px;
+    }
+    
+    .design-panel__item {
+        text-decoration: none;
+        display: block;
+        position: relative;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        color: #666666;
+    }
+    
+    .design-panel__item:hover {
+        color: blueviolet;
+    }
+    
+    icon-color-wrapper .back {
+        background: url("../../assets/images/decoration-add.svg");
+    }
+`
 
 const DecoratePanel = (props) => {
 
@@ -17,10 +64,10 @@ const DecoratePanel = (props) => {
     };
 
     return (
-        <div id={panelDecorateSelected ? 'decorate-panel' : 'none'}>
-            <div className="decoration-positions design-panels">
+        <StyledDecoratePanel>
+            <DesignPanel>
                 <ClosePanel handleClose={handleClose}/>
-                <div className="design-panel__content">
+                <DesignPanelContent>
                     <div className="scrollbar-container panel-scroll-container">
                         <div className="scrollable-content for-mac ">
                             <div className="position-panel-padding">
@@ -32,7 +79,7 @@ const DecoratePanel = (props) => {
                                         <div className="design-panel__item-name">Chest Right</div>
                                     </a>
                                 </div>
-                                <div className="divider"/>
+                                <Divider/>
                                 <div className="decoration-position">
                                     <a href="#something" className="design-panel__item" onClick={handleDecorate}>
                                         <div className="icon-color-wrapper">
@@ -41,7 +88,7 @@ const DecoratePanel = (props) => {
                                         <div className="design-panel__item-name">Chest Left</div>
                                     </a>
                                 </div>
-                                <div className="divider"/>
+                                <Divider/>
                                 <div className="decoration-position">
                                     <a href="#something" className="design-panel__item" onClick={handleDecorate}>
                                         <div className="icon-color-wrapper">
@@ -50,7 +97,7 @@ const DecoratePanel = (props) => {
                                         <div className="design-panel__item-name">Back Center</div>
                                     </a>
                                 </div>
-                                <div className="divider"/>
+                                <Divider/>
                                 <div className="decoration-position" onClick={handleDecorate}>
                                     <a href="#something" className="design-panel__item">
                                         <div className="icon-color-wrapper">
@@ -59,17 +106,17 @@ const DecoratePanel = (props) => {
                                         <div className="design-panel__item-name">Inside Lining</div>
                                     </a>
                                 </div>
-                                <div className="divider"/>
+                                <Divider/>
                             </div>
                         </div>
                         <div className="scrollbar-track vertical ">
                             <div className="scrollbar-thumb"/>
                         </div>
                     </div>
-                </div>
-            </div>
+                </DesignPanelContent>
+            </DesignPanel>
             <IconsPanel/>
-        </div>
+        </StyledDecoratePanel>
     )
 };
 
