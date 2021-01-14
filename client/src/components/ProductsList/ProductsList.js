@@ -6,16 +6,52 @@ import ProductCard from "../ProductCard/ProductCard";
 import { getProducts } from "../../store/actions/productActions";
 import { connect } from "react-redux"
 import PropTypes  from "prop-types";
-import styles from "./ProductsList.module.css"
-import Search from "../Search/Search";
-import Size from "../Layout/UI/Size";
-import Counter from "../Layout/UI/Counter";
+import Search from "../Search";
+import Size from "../Size";
+import Counter from "../Counter";
 
+import styled from 'styled-components'
+
+const StyledProductList = styled.div`
+    padding: 50px 50px;
+    display: flex;
+    justify-content: space-between;
+`
+const Filters = styled.div`
+    width: 100%;
+    max-width: 400px;
+`
+const Main = styled.main`
+    display: grid;
+    grid-template-columns: repeat(3, minmax(auto, 270px));
+    grid-template-rows: 1fr;
+    grid-gap: 20px;
+    
+    @media only screen and (max-width: 700px) {
+        grid-gap: 20px;
+    }
+    
+    @media only screen and (max-width: 500px) {
+        grid-template-columns: 10px repeat(6, 1fr) 10px;
+        grid-gap: 10px;
+        
+        .cards {
+        grid-column: 2 / span 6;
+        grid-template-columns: repeat(6, 1fr);
+        grid-gap: 20px;
+        }
+    }
+`
+const Page = styled.div`
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+`
 
 const onMount = props => () => {
     props.getProducts();
 };
-
 
 const ProductsList = (props) =>  {
 
@@ -47,24 +83,24 @@ const ProductsList = (props) =>  {
             return <ProductCard key={product._id} product={product}/>
         });
         productsContent = (
-            <div style={{ padding: '50px 50px' }} className={styles.list}>
-                <div className={styles.filters}>
+            <StyledProductList>
+                <Filters>
                     <Search onSearchChange={onSearchChange}/>
                     <Size/>
                     <Counter/>
-                </div>
-                <main className={styles.main}>
+                </Filters>
+                <Main>
                     { dataSource }
-                </main>
-            </div>
+                </Main>
+            </StyledProductList>
         )
     }
     return (
-        <div className={styles.page}>
+        <Page>
             <Navbar/>
             { productsContent }
             <Footer/>
-        </div>
+        </Page>
     )
 
 };

@@ -42,19 +42,40 @@ const SizeContent = styled.ul`
 
 const Size = (props) => {
 
-    const [selected, setSelected] = useState(false);
+    const [selected, setSelected] = useState(0);
 
-    const onSelected = () => {
-        setSelected(true)
+    const onSelected = (id) => {
+        setSelected(id)
     };
 
-    const array = ['S', 'M', 'L', 'XL'];
+    const sizes = [
+        {
+            id: 1,
+            name: 'S'
+        },
+        {
+            id: 2,
+            name: 'M'
+        },
+        {
+            id: 3,
+            name: 'L'
+        },
+        {
+            id: 4,
+            name: 'XL'
+        }
+    ]
 
 
     function renderSizes() {
-        return array.map((item, index) => (
-            <li onClick={onSelected} key={index} className={classnames({ selected })}>
-                <a href="/#">{ item }</a>
+        return sizes.map((item, index) => (
+            <li
+                onClick={() => onSelected(item.id)}
+                key={index}
+                className={classnames({ selected: selected === item.id })}
+            >
+                <a href="#">{ item.name }</a>
             </li>
         ))
     }
