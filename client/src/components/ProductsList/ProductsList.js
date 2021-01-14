@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../layout/Navigation";
-import Footer from "../layout/Footer";
-import Spinner from "../layout/UI/spinner/Spinner"
-import ProductCard from "../product-card/ProductCard";
+import Navbar from "../Layout/Navigation";
+import Footer from "../Layout/Footer";
+import Spinner from "../Layout/UI/Spinner"
+import ProductCard from "../ProductCard/ProductCard";
 import { getProducts } from "../../store/actions/productActions";
 import { connect } from "react-redux"
 import PropTypes  from "prop-types";
 import styles from "./ProductsList.module.css"
-import Search from "../search/Search";
-import Size from "../layout/UI/size-panel/Size";
-import Quantity from "../layout/UI/quantity-panel/Quantity";
+import Search from "../Search/Search";
+import Size from "../Layout/UI/Size";
+import Counter from "../Layout/UI/Counter";
 
 
 const onMount = props => () => {
@@ -51,7 +51,7 @@ const ProductsList = (props) =>  {
                 <div className={styles.filters}>
                     <Search onSearchChange={onSearchChange}/>
                     <Size/>
-                    <Quantity/>
+                    <Counter/>
                 </div>
                 <main className={styles.main}>
                     { dataSource }

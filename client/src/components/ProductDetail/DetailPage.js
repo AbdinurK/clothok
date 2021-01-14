@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom"
 import styles from "./DetailPage.module.css";
-import Size from "../layout/UI/size-panel/Size";
+import Size from "../Layout/UI/Size";
 
 const ActionButtons = ({ code }) => {
     return (

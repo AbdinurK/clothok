@@ -1,11 +1,19 @@
 import React from "react";
-import DesignNav from "../layout/DesignNav";
+import DesignNav from "../Layout/DesignNav";
 import DesignPanel from "../DesignPanel/DesignPanel";
 import { connect } from 'react-redux';
-import { withDesignProps } from "../hoc/withDesignProps"
+import { withDesignProps } from "../HOC/withDesignProps"
 import { getState } from "../../store/actions/designActions"
 import { components } from "../assets/service/components"
-import classes from "./DesignLab.module.css"
+import styled from 'styled-components'
+
+const RowWrapper = styled.div`
+    display: flex;
+    margin-top: 35px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+`
 
 const DesignLab = (props) => {
     const load = props.match.params.id;
@@ -15,13 +23,13 @@ const DesignLab = (props) => {
     const selected = selectedElement.toLowerCase().trim();
     const Product = withDesignProps(components[load]);
     return (
-        <div style={{ backgroundColor: '#FDFDFD' }}>
+        <div>
             <DesignNav/>
             <div className="container">
-                <div className={classes.rowWrapper}>
+                <RowWrapper>
                     <DesignPanel/>
                     <Product color={color} selected={selected}/>
-                </div>
+                </RowWrapper>
             </div>
         </div>
     )

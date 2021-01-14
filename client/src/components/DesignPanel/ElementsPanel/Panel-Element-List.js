@@ -6,8 +6,8 @@ import { components } from "../../assets/service/components"
 import angle from "../../assets/images/angle-right-white.svg";
 import PanelColorList from "./Panel-Color-List";
 import { PanelContent, Title, Divider } from '../UI'
-import { withDesignProps } from "../../hoc/withDesignProps";
-import ClosePanel from "../../layout/UI/close-panel/ClosePanel";
+import { withDesignProps } from "../../HOC/withDesignProps";
+import ClosePanel from "../../Layout/UI/ClosePanel";
 import styled from 'styled-components'
 
 
@@ -65,23 +65,25 @@ const SectionName = styled.div`
 `
 
 const PanelElementList = (props) => {
-    const code = props.match.params.id;
-    const Product = withDesignProps(components[code]);
+    const [selected, setSelected] = useState(props.state)
+    const Product = withDesignProps(components[props.match.params.id]);
     const [data, setData] = useState({});
-    const { panelEntrySelected } = props.design;
     useEffect(() => {
-        fetch(`http://localhost:5000/products/code/${code}`)
+        fetch(`http://localhost:5000/products/code/${props.match.params.id}`)
             .then(results => results.json())
             .then(data => {
                 setData(data);
             });
-    }, [code]);
-    let selected = false;
+    }, [props.match.params.id]);
+    useEffect(() => {
+        setSelected(props.state)
+    }, [props.state])
     const handleSelected = element => {
-        props.panelElementsSelected(!selected);
+        setSelected(true)
         props.setElement(element.split(' ').join('').toLowerCase())
     };
     const handleClose = () => {
+        setSelected(false)
         props.panelEntrySelected(false)
     };
     const { elements } = data;
@@ -109,7 +111,7 @@ const PanelElementList = (props) => {
     return (
         <ColorCustomizePanel>
             {
-                panelEntrySelected ? (
+                selected ? (
                     <SectionGroups>
                         <ClosePanel handleClose={handleClose}/>
                         <PanelContent>
@@ -126,7 +128,7 @@ const PanelElementList = (props) => {
                     </SectionGroups>
                 ) : null
             }
-            <PanelColorList/>
+            <PanelColorList state={selected}/>
         </ColorCustomizePanel>
     )
 };
@@ -136,7 +138,4 @@ const mapStateToProps = state => ({
 });
 
 
-export default connect(
-    mapStateToProps,
-    { setElement, panelElementsSelected, panelEntrySelected }
-    )(withRouter(PanelElementList))
+export default connect(mapStateToProps, { setElement, panelElementsSelected, panelEntrySelected })(withRouter(PanelElementList))

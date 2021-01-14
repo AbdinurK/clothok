@@ -1,5 +1,15 @@
 import React, {useState} from "react";
-import styles from "./Search.module.css"
+import styled from 'styled-components'
+
+const StyledSearch = styled.input`
+    padding: 10px;
+    position: relative;
+    left: 0;
+    font-size: 1.2rem;
+    outline: none;
+    width: 100%;
+    max-height: 40px;
+`
 
 const Search = (props) => {
 
@@ -12,9 +22,8 @@ const Search = (props) => {
     };
 
     return (
-        <input
+        <StyledSearch
             type="text"
-            className={styles.search}
             placeholder="search..."
             value={term}
             onChange={onSearchChange}

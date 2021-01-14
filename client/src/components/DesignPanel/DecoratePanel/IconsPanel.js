@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { setLogo, panelSetLogoSelected } from "../../../store/actions/designActions"
 import ld from "../../assets/icons/2021.png"
 import lk from "../../assets/icons/image.png"
-import ClosePanel from "../../layout/UI/close-panel/ClosePanel";
+import ClosePanel from "../../Layout/UI/ClosePanel";
 import { PanelContent, Title } from '../UI'
 import styled from 'styled-components'
 
@@ -46,28 +46,34 @@ const IconsPanel = (props) => {
     };
 
     return (
-        <IconPanel>
-            <ClosePanel handleClose={handleClose}/>
-            <PanelContent>
-                <Title>ICONS</Title>
-                <div className="scrollbar-container panel-scroll-container">
-                    <div className="scrollable-content for-mac ">
-                        <LogoList>
-                            <a href="#something" className="icon-wrapper">
-                                <img src={lk} alt="sorry" onClick={handleSelected}/>
-                            </a>
-                            <a href="#something" className="icon-wrapper">
-                                <img src={ld} alt="sorry" onClick={handleSelected}/>
-                            </a>
-                        </LogoList>
-                    </div>
-                    <div className="scrollbar-track vertical hidden">
-                        <div className="scrollbar-thumb"
-                             style={{ height: '100%', transform: 'translateY(0px)' }}/>
-                    </div>
-                </div>
-            </PanelContent>
-        </IconPanel>
+        <React.Fragment>
+            {
+                props.state ? (
+                    <IconPanel>
+                        <ClosePanel handleClose={handleClose}/>
+                        <PanelContent>
+                            <Title>ICONS</Title>
+                            <div className="scrollbar-container panel-scroll-container">
+                                <div className="scrollable-content for-mac ">
+                                    <LogoList>
+                                        <a href="#something" className="icon-wrapper">
+                                            <img src={lk} alt="sorry" onClick={handleSelected}/>
+                                        </a>
+                                        <a href="#something" className="icon-wrapper">
+                                            <img src={ld} alt="sorry" onClick={handleSelected}/>
+                                        </a>
+                                    </LogoList>
+                                </div>
+                                <div className="scrollbar-track vertical hidden">
+                                    <div className="scrollbar-thumb"
+                                         style={{ height: '100%', transform: 'translateY(0px)' }}/>
+                                </div>
+                            </div>
+                        </PanelContent>
+                    </IconPanel>
+                ) : null
+            }
+        </React.Fragment>
     )
 };
 

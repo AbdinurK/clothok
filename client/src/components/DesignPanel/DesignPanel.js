@@ -86,19 +86,17 @@ const ResetButton = styled.button`
 const DesignPanel = (props) =>  {
 
     const [selected, setSelected] = useState(false)
-    let colorSelected, designSelected = false;
-    const { panelEntrySelected, panelDecorateSelected } = props.design;
+    const [panelElementSelected, setPanelElementSelected] = useState(false)
+    const [panelDecorateSelected, setPanelDecorateSelected] = useState(false)
 
-    const handleColorClick = () => {
-        setSelected(true)
-        props.panelEntrySelected(!colorSelected)
-        props.panelDecorateSelected(false);
+    const handleElementClick = () => {
+        setSelected(!selected)
+        setPanelElementSelected(true)
     };
 
-    const handleDesignClick = () => {
-        setSelected(true)
-        props.panelDecorateSelected(!designSelected);
-        props.panelEntrySelected(false);
+    const handleDecorateClick = () => {
+        setSelected(!selected)
+        setPanelDecorateSelected(true)
     };
 
     const handleReset = () => {
@@ -110,7 +108,7 @@ const DesignPanel = (props) =>  {
             <EntryPanel selected={selected}>
                 <Categories>
                     <div>
-                        <a href="#something" onClick={handleColorClick}>
+                        <a href="#something" onClick={handleElementClick}>
                             <Icon>
                                 <img className="icon" src={color} alt="color"/>
                                 <img className="angle-icon" src={angle} alt="color"/>
@@ -120,7 +118,7 @@ const DesignPanel = (props) =>  {
                     </div>
                     <Divider/>
                     <div>
-                        <a href="#something" onClick={handleDesignClick}>
+                        <a href="#something" onClick={handleDecorateClick}>
                             <Icon>
                                 <img className="icon" src={decoration} alt="color"/>
                                 <img className="angle-icon" src={angle} alt="color"/>
@@ -131,8 +129,8 @@ const DesignPanel = (props) =>  {
                 </Categories>
                 <ResetButton onClick={handleReset}>RESET</ResetButton>
             </EntryPanel>
-            <PanelElementList/>
-            {/*<DecoratePanel/>*/}
+            <PanelElementList state={panelElementSelected}/>
+            <DecoratePanel state={panelDecorateSelected}/>
         </Panel>
     )
 
