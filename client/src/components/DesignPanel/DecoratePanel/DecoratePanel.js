@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { panelSetLogoSelected, panelDecorateSelected } from "../../../store/actions/designActions"
 import { connect } from "react-redux";
 import IconsPanel from "./IconsPanel";
 import { Divider } from '../UI'
-import ClosePanel from "../../layout/UI/close-panel/ClosePanel";
+import ClosePanel from "../../Layout/UI/ClosePanel";
 import styled from 'styled-components'
 
 
@@ -54,69 +54,75 @@ const DesignPanelContent = styled.div`
 
 const DecoratePanel = (props) => {
 
-    let selected = false;
+    const [selected, setSelected] = useState(false)
     const { panelDecorateSelected } = props.design;
     const handleDecorate = () => {
-        props.panelSetLogoSelected(!selected);
+        setSelected(true)
     };
     const handleClose = () => {
         props.panelDecorateSelected(false)
     };
 
     return (
-        <StyledDecoratePanel>
-            <DesignPanel>
-                <ClosePanel handleClose={handleClose}/>
-                <DesignPanelContent>
-                    <div className="scrollbar-container panel-scroll-container">
-                        <div className="scrollable-content for-mac ">
-                            <div className="position-panel-padding">
-                                <div className="decoration-position">
-                                    <a href="#something" className="design-panel__item" onClick={handleDecorate}>
-                                        <div className="icon-color-wrapper">
-                                            <div className="back"/>
+        <React.Fragment>
+            {
+                props.state ? (
+                    <StyledDecoratePanel>
+                        <DesignPanel>
+                            <ClosePanel handleClose={handleClose}/>
+                            <DesignPanelContent>
+                                <div className="scrollbar-container panel-scroll-container">
+                                    <div className="scrollable-content for-mac ">
+                                        <div className="position-panel-padding">
+                                            <div className="decoration-position">
+                                                <a href="#something" className="design-panel__item" onClick={handleDecorate}>
+                                                    <div className="icon-color-wrapper">
+                                                        <div className="back"/>
+                                                    </div>
+                                                    <div className="design-panel__item-name">Chest Right</div>
+                                                </a>
+                                            </div>
+                                            <Divider/>
+                                            <div className="decoration-position">
+                                                <a href="#something" className="design-panel__item" onClick={handleDecorate}>
+                                                    <div className="icon-color-wrapper">
+                                                        <div className="back"/>
+                                                    </div>
+                                                    <div className="design-panel__item-name">Chest Left</div>
+                                                </a>
+                                            </div>
+                                            <Divider/>
+                                            <div className="decoration-position">
+                                                <a href="#something" className="design-panel__item" onClick={handleDecorate}>
+                                                    <div className="icon-color-wrapper">
+                                                        <div className="back"/>
+                                                    </div>
+                                                    <div className="design-panel__item-name">Back Center</div>
+                                                </a>
+                                            </div>
+                                            <Divider/>
+                                            <div className="decoration-position" onClick={handleDecorate}>
+                                                <a href="#something" className="design-panel__item">
+                                                    <div className="icon-color-wrapper">
+                                                        <div className="back"/>
+                                                    </div>
+                                                    <div className="design-panel__item-name">Inside Lining</div>
+                                                </a>
+                                            </div>
+                                            <Divider/>
                                         </div>
-                                        <div className="design-panel__item-name">Chest Right</div>
-                                    </a>
+                                    </div>
+                                    <div className="scrollbar-track vertical ">
+                                        <div className="scrollbar-thumb"/>
+                                    </div>
                                 </div>
-                                <Divider/>
-                                <div className="decoration-position">
-                                    <a href="#something" className="design-panel__item" onClick={handleDecorate}>
-                                        <div className="icon-color-wrapper">
-                                            <div className="back"/>
-                                        </div>
-                                        <div className="design-panel__item-name">Chest Left</div>
-                                    </a>
-                                </div>
-                                <Divider/>
-                                <div className="decoration-position">
-                                    <a href="#something" className="design-panel__item" onClick={handleDecorate}>
-                                        <div className="icon-color-wrapper">
-                                            <div className="back"/>
-                                        </div>
-                                        <div className="design-panel__item-name">Back Center</div>
-                                    </a>
-                                </div>
-                                <Divider/>
-                                <div className="decoration-position" onClick={handleDecorate}>
-                                    <a href="#something" className="design-panel__item">
-                                        <div className="icon-color-wrapper">
-                                            <div className="back"/>
-                                        </div>
-                                        <div className="design-panel__item-name">Inside Lining</div>
-                                    </a>
-                                </div>
-                                <Divider/>
-                            </div>
-                        </div>
-                        <div className="scrollbar-track vertical ">
-                            <div className="scrollbar-thumb"/>
-                        </div>
-                    </div>
-                </DesignPanelContent>
-            </DesignPanel>
-            <IconsPanel/>
-        </StyledDecoratePanel>
+                            </DesignPanelContent>
+                        </DesignPanel>
+                        <IconsPanel state={selected}/>
+                    </StyledDecoratePanel>
+                ) : null
+            }
+        </React.Fragment>
     )
 };
 

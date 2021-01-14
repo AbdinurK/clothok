@@ -4,15 +4,15 @@ import jwt_decode from "jwt-decode";
 import store from "./store/store";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./store/actions/authActions"
-import LandingPage from "./components/pages/landing-page/LandingPage"
-import ProductsList from "./components/products-list/ProductsList";
+import LandingPage from "./components/Pages/Landing/LandingPage"
+import ProductsList from "./components/ProductsList/ProductsList";
 import DesignLab from "./components/DesignLab/DesignLab";
-import ProductDetail from "./components/product-detail/ProductDetail"
+import ProductDetail from "./components/ProductDetail/ProductDetail"
 import Laboratory from "./components/DesignLab/Laboratory";
-import Register from "./components/auth/Register";
-import Login from "./components/auth/Login";
+import Register from "./components/Auth/Register";
+import Login from "./components/Auth/Login";
 import Dashboard from "./components/Dashboard";
-import PrivateRoute from "./components/hoc/PrivateRoute";
+import PrivateRoute from "./components/HOC/PrivateRoute";
 import DemoKeyboard from "./components/DemoKeyboard";
 
 

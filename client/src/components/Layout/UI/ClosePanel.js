@@ -1,5 +1,5 @@
 import React from "react";
-import cross from "../../../assets/images/cross.svg";
+import cross from "../../assets/images/cross.svg";
 import styled from 'styled-components'
 
 const StyledClosePanel = styled.div`

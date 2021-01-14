@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Navbar from "../layout/Navigation";
+import Navbar from "../Layout/Navigation";
 import {getProduct} from "../../store/actions/productActions";
-import Spinner from "../layout/UI/spinner/Spinner"
-import Footer from "../layout/Footer";
+import Spinner from "../Layout/UI/Spinner"
+import Footer from "../Layout/Footer";
 import DetailPage from "./DetailPage";
 
 class ProductDetail extends Component {

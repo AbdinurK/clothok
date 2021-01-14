@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { connect } from "react-redux";
 import { setColor, panelElementsSelected } from "../../../store/actions/designActions"
-import ClosePanel from "../../layout/UI/close-panel/ClosePanel";
+import ClosePanel from "../../Layout/UI/ClosePanel";
 import { PanelContent, Title } from '../UI'
 import styled, { css } from 'styled-components'
 
@@ -43,13 +43,16 @@ const Color = styled.div`
 `
 
 const PanelColorList = (props) => {
-    const [selected, setSelected] = useState(false)
+    const [state, setState] = useState(props.state)
+    useEffect(() => {
+        setState(props.state)
+    }, [props.state])
     const { panelElementsSelected, panelEntrySelected } = props.design;
     const handleSelected = e => {
         props.setColor(e.target.style.background)
     };
     const handleClose = () => {
-        props.panelElementsSelected(false)
+        setState(false)
     };
     const colors = [
         '#D1F2EB',
@@ -74,24 +77,30 @@ const PanelColorList = (props) => {
 
 
     return (
-        <StyledPanelColorList>
-            <ClosePanel handleClose={handleClose}/>
-            <PanelContent>
-                <Title>COLORS</Title>
-                <div className="scrollbar-container panel-scroll-container">
-                    <div className="scrollable-content for-mac ">
-                        <ColorList>
-                            { renderColors() }
-                        </ColorList>
-                    </div>
-                    <div className="scrollbar-track vertical hidden">
-                        <div className="scrollbar-thumb"
-                             style={{ height: '100%', transform: 'translateY(0px)'}}
-                        />
-                    </div>
-                </div>
-            </PanelContent>
-        </StyledPanelColorList>
+        <React.Fragment>
+            {
+                state && props.entry ? (
+                    <StyledPanelColorList>
+                        <ClosePanel handleClose={handleClose}/>
+                        <PanelContent>
+                            <Title>COLORS</Title>
+                            <div className="scrollbar-container panel-scroll-container">
+                                <div className="scrollable-content for-mac ">
+                                    <ColorList>
+                                        { renderColors() }
+                                    </ColorList>
+                                </div>
+                                <div className="scrollbar-track vertical hidden">
+                                    <div className="scrollbar-thumb"
+                                         style={{ height: '100%', transform: 'translateY(0px)'}}
+                                    />
+                                </div>
+                            </div>
+                        </PanelContent>
+                    </StyledPanelColorList>
+                ) : null
+            }
+        </React.Fragment>
     )
 };
 
