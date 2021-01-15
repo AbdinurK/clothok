@@ -49,7 +49,7 @@ const Section = styled.div`
     
     .svg-icon svg {
         width: 56.52%;
-        margin-left: 21.74%;
+        margin-left: 15%;
         display: inline-block;
         vertical-align: middle;
     }
