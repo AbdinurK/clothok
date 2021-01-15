@@ -47,7 +47,6 @@ const PanelColorList = (props) => {
     useEffect(() => {
         setState(props.state)
     }, [props.state])
-    const { panelElementsSelected, panelEntrySelected } = props.design;
     const handleSelected = e => {
         props.setColor(e.target.style.background)
     };

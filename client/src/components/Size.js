@@ -75,7 +75,7 @@ const Size = (props) => {
                 key={index}
                 className={classnames({ selected: selected === item.id })}
             >
-                <a href="#">{ item.name }</a>
+                <a href="#some">{ item.name }</a>
             </li>
         ))
     }

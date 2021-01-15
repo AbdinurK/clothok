@@ -55,7 +55,6 @@ const DesignPanelContent = styled.div`
 const DecoratePanel = (props) => {
 
     const [selected, setSelected] = useState(false)
-    const { panelDecorateSelected } = props.design;
     const handleDecorate = () => {
         setSelected(true)
     };
