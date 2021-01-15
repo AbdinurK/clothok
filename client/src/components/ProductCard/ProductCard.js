@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import basket from "../assets/images/basket-black.svg"
 import styled from 'styled-components'
 
-
-
 const Card = styled.div`
     display: flex;
     flex-direction: column;

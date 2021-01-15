@@ -125,9 +125,6 @@ const Header = styled.div`
         margin-left: 15px;
     }
 `
-const Left = styled.div`
-    justify-content: flex-start;
-`
 
 const DesignNav = () => {
     return (

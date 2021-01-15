@@ -40,7 +40,6 @@ const IconsPanel = (props) => {
     const handleSelected = e => {
         props.setLogo(e.target.src)
     };
-    const { panelSetLogo, panelDecorateSelected } = props.design;
     const handleClose = () => {
         props.panelSetLogoSelected(false)
     };
