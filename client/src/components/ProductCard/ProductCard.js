@@ -8,12 +8,11 @@ const Card = styled.div`
     flex-direction: column;
     cursor: pointer;
     transition: all 0.3s ease 0s;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+    border: 1px solid #ccc;
     max-height: 340px;
     
     :hover {
-        transform: translateY(-7px);
-        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
     }
     
     @media only screen and (max-width: 1000px) {
@@ -56,9 +55,14 @@ const CardInfo = styled.div`
         right: 10px;
         width: 30px;
     }
+    
+    .selected {
+        background: red;
+    }
 `
 const CardContent = styled.div`
     padding: 10px 20px;
+    min-width: 50px;
     
     > a {
         text-decoration: none;
@@ -85,7 +89,7 @@ const ProductCard = ({ product }) => {
                     </Link>
                     <p className="card__price">{ price }</p>
                 </CardContent>
-                <img src={basket} alt="no" className="basket"/>
+                <img src={basket} alt="no" className="basket selected"/>
             </CardInfo>
         </Card>
     )
